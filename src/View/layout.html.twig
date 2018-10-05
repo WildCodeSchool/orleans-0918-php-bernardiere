@@ -1,19 +1,77 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title  %}La Bernardière{% end block %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <title>{% block title %}{% endblock %}</title>
+    <!-- Favicons -->
 
-    <link rel="stylesheet" href="/assets/css/styles.css">
+        <link href="../../public/assets/images/favicon.png" rel="icon">
+        <link href="./public/assets/imgages/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+        <!-- Bootstrap CSS File -->
+        <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/style.css" rel="stylesheet">
+
     {% block stylesheet %}{% endblock %}
-    <link rel="icon" href="/assets/images/favicon.png">
+
+    <!-- =======================================================
+      Theme Name: Regna
+      Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
 </head>
 
+
 <body>
-{% block content %}{% endblock %}
-{% block javascript %}{% endblock %}
+    <header id="header">
+        {% include 'header.html.twig' %}
+    </header>
+
+    <main id="main">
+    {% block content %}{% endblock %}
+    </main>
+
+    <footer id="footer">
+        {% include 'footer.html.twig' %}
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="../../public/assets/lib/jquery/jquery.min.js"></script>
+    <script src="../../public/assets/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="../../public/assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../public/assets/lib/easing/easing.min.js"></script>
+    <script src="../../public/assets/lib/wow/wow.min.js"></script>
+    <script src="../../public/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../../public/assets/lib/counterup/counterup.min.js"></script>
+    <script src="../../public/assets/lib/superfish/hoverIntent.js"></script>
+    <script src="../../public/assets/lib/superfish/superfish.min.js"></script>
+    <!-- Uncomment below if you want to use dynamic Google Maps -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script> -->
+
+    <!-- Contact Form JavaScript File -->
+    <script src="../../public/assets/contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="../../public/assets/js/main.js"></script>
+
+    {% block javascripts %}{% endblock %}
+
+    {% block javascript %}{% endblock %}
 </body>
 </html>
