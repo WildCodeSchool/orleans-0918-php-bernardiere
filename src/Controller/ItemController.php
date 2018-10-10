@@ -60,7 +60,7 @@ class ItemController extends AbstractController
      *
      * @param int $id
      * @return string
-     * @throws \Twig_Error_Loadergit
+     * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
