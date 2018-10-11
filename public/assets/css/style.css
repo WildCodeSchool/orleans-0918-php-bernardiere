@@ -74,13 +74,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: #2dc997;
+  background: #f3b27b;
   color: #fff;
 }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
+
 #header {
   padding: 30px 0;
   height: 92px;
@@ -90,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
+  background: rgba(0,0,0,0.5);
 }
 
 #header #logo {
@@ -101,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 6px 0;
   line-height: 1;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Lobster', cursive;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -132,13 +135,14 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
 }
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../img/hero-bg.jpg) top center;
+  background: url(../images/banner.jpg) top center;
   background-size: cover;
   position: relative;
 }
@@ -151,7 +155,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -163,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   bottom: 0;
   top: 0;
-  left: 0;
+  margin: 18em;
   right: 0;
   display: flex;
   justify-content: center;
@@ -174,31 +177,36 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 30px 0 10px 0;
-  font-size: 48px;
+  font-size: 5em;
   font-weight: 700;
   line-height: 56px;
-  text-transform: uppercase;
   color: #fff;
+  font-family: 'Lobster', cursive;
+  float: right;
 }
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    display: flex;
+    justify-content: center;
+
   }
 }
 
-#hero h2 {
-  color: #eee;
+#hero p {
+  color: #fff;
   margin-bottom: 50px;
-  font-size: 24px;
+  font-size: 3em;
+  font-family: 'Lobster', cursive;
+  padding-top: 2em;
+
 }
 
 @media (max-width: 768px) {
-  #hero h2 {
+  #hero p {
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 }
 
@@ -226,40 +234,50 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Nav Menu Essentials */
-.nav-menu, .nav-menu * {
+.navbar-nav, .navbar-nav * {
   margin: 0;
   padding: 0;
   list-style: none;
+
+}
+.navbar-nav a:hover {
+  border-top: 4px solid #f3b27b;
+  color: #f3b27b;
 }
 
-.nav-menu ul {
+.navbar-nav ul {
   position: absolute;
   display: none;
   top: 100%;
   left: 0;
   z-index: 99;
-}
+  font-family: 'Lobster', cursive;
 
-.nav-menu li {
+
+}
+.navbar-toggler{
+  background-color: #ffffff;
+}
+.navbar-nav li {
   position: relative;
   white-space: nowrap;
 }
 
-.nav-menu > li {
+.navbar-nav > li {
   float: left;
 }
 
-.nav-menu li:hover > ul,
-.nav-menu li.sfHover > ul {
+.navbar-nav li:hover > ul,
+.navbar-nav li.sfHover > ul {
   display: block;
 }
 
-.nav-menu ul ul {
+.navbar-nav ul ul {
   top: 0;
   left: 100%;
 }
 
-.nav-menu ul li {
+.navbar-nav ul li {
   min-width: 180px;
 }
 
@@ -282,35 +300,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav Meu Container */
-#nav-menu-container {
-  float: right;
+.navbar-nav-container {
+  text-align: center;
   margin: 0;
+  display: flex;
+  justify-content: center;
+
 }
 
 @media (max-width: 768px) {
-  #nav-menu-container {
+  .navbar-nav-container {
     display: none;
+
   }
 }
 
 /* Nav Meu Styling */
-.nav-menu a {
-  padding: 0 8px 10px 8px;
+.navbar-nav a {
+  padding: 0 0.8em 10px 8px;
   text-decoration: none;
-  display: inline-block;
+
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Lobster', cursive;
   font-weight: 400;
-  text-transform: uppercase;
-  font-size: 13px;
+  font-size: 1.8em;
   outline: none;
 }
 
-.nav-menu > li {
+.navbar-nav > li {
   margin-left: 10px;
 }
 
-.nav-menu > li > a:before {
+.navbar-nav > li > a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -325,26 +346,26 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .menu-active > a:before {
+.navbar-nav a:hover:before, .navbar-nav li:hover > a:before, .navbar-nav .menu-active > a:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-.nav-menu ul {
+.navbar-nav ul {
   margin: 4px 0 0 0;
   border: 1px solid #e7e7e7;
 }
 
-.nav-menu ul li {
+.navbar-nav ul li {
   background: #fff;
 }
 
-.nav-menu ul li:first-child {
+.navbar-nav ul li:first-child {
   border-top: 0;
 }
 
-.nav-menu ul li a {
+.navbar-nav ul li a {
   padding: 10px;
   color: #333;
   transition: 0.3s;
@@ -353,12 +374,12 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: none;
 }
 
-.nav-menu ul li a:hover {
+.navbar-nav ul li a:hover {
   background: #2dc997;
   color: #fff;
 }
 
-.nav-menu ul ul {
+.navbar-nav ul ul {
   margin: 0;
 }
 
@@ -476,8 +497,39 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
+
+
+
+/* Sections phone+horairs
+--------------------------------*/
+.pin.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 2px;
+  width: 12px;
+  height: 12px;
+  border: solid 1px currentColor;
+  border-radius: 7px 7px 7px 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.pin.icon:before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 4px;
+  height: 4px;
+  border: solid 1px currentColor;
+  border-radius: 3px;
+}
+
 /* Sections Header
 --------------------------------*/
+
+
 .section-header .section-title {
   font-size: 32px;
   color: #111;
@@ -495,14 +547,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* About Us Section
 --------------------------------*/
-#about {
-  background: #fff;
-  padding: 80px 0;
-}
 
 #about .about-container .background {
   min-height: 300px;
-  background: url(../img/about-img.jpg) center top no-repeat;
+  background: url(file:///home/wilder4/testbernar/web/images/img1.jpg) center top no-repeat;
   margin-bottom: 10px;
 }
 
@@ -805,10 +853,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Team Section
 --------------------------------*/
-#team {
-  background: #fff;
-  padding: 80px 0 60px 0;
-}
 
 #team .member {
   text-align: center;
@@ -961,22 +1005,96 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
+# sections
+--------------------------------------------------------------*/
+.services-section {
+  padding: 4em 0;
+  background: #f5f5f5;
+  text-align: center;
+
+}
+.services-section h3 {
+  font-size: 3.5em;
+  text-transform: capitalize;
+  margin-bottom: 1.5em;
+  color: #394c53;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+}
+.services-sections {
+  padding: 4em 0;
+  text-align: center;
+
+}
+.services-sections h3 {
+  font-size: 3.5em;
+  text-transform: capitalize;
+  margin-bottom: 1.5em;
+  color: #394c53;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+}
+
+
+/*--------------------------------------------------------------
+# Map
+--------------------------------------------------------------*/
+.contact-map iframe{
+  min-height:300px;
+  width:100%;
+  border:none;
+  margin:1.5em 0 1em;
+}
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer {
-  background: #343b40;
-  padding: 30px 0;
-  color: #fff;
-  font-size: 14px;
+.footer-bottom {
+  margin-top: 1em;
 }
-
-#footer .copyright {
-  text-align: center;
+.footer-bottom p {
+  font-size: 1em;
+  color: #000;
+  font-weight: 400;
 }
-
-#footer .credits {
-  padding-top: 10px;
+.footer-bottom a {
+  color:#16A667;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-family: 'Exo', sans-serif;
+}
+.footer-bottom a:hover {
+  color: #000;
+}
+.footer-bottom p a {
+  margin: 0 6px 0 6px;
+}
+.bottom-menu ul li {
+  display: inline-block;
+  margin: 1.2em 1.5em;
+}
+.bottom-menu ul li  a{
+  text-transform: capitalize;
+  font-size: 1.4em;
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer-section {
+  padding: 4em 0;
   text-align: center;
-  font-size: 13px;
-  color: #ccc;
+  background: url("../images/footer.png") no-repeat 0px 0px;;
+}
+.social-icons i {
+  width: 55px;
+  height: 55px;
+  background: url("../images/img-sprite1.png") no-repeat 0px 0px;
+  display: inline-block;
+  margin: 0 0 0 1em;
+}
+.social-icons i.icon1
+{
+  background:url("../images/img-sprite1.png") no-repeat 0px 0px;
+}
+.social-icons i:hover {
+  opacity: 0.6;
 }
