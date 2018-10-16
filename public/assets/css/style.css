@@ -1098,3 +1098,27 @@ body.mobile-nav-active #mobile-nav-toggle {
 .social-icons i:hover {
   opacity: 0.6;
 }
+
+/*-----------------------------------------------------------------
+Barre d'adresse fixée sous la bannière
+------------------------------------------------------------------- */
+.adressbar ul{
+  list-style : none;
+  margin-top : 15px;
+  padding : 0;
+
+}
+
+.adressbar h3{
+  padding-top : 5px;
+  }
+
+.adressbar{
+  background-color : #f5f5f5;
+  box-shadow: 0px 5px 5px #363636;
+  color : #000000;
+
+}
+
+
+
