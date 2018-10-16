@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../images/banner.jpg) top center;
+  background: url("../images/banner.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -550,7 +550,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #about .about-container .background {
   min-height: 300px;
-  background: url(file:///home/wilder4/testbernar/web/images/img1.jpg) center top no-repeat;
+  background: url("../images/aboutImg1.jpg") center top no-repeat;
   margin-bottom: 10px;
 }
 
