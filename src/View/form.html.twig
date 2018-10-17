@@ -1,0 +1,94 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+
+    <form action="contact" method="post" target="">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <form>
+                        <div class="form-group row">
+                            <label for="nom" class="col-xl-1 col-form-label">Nom:</label>
+                            <div class="col-xl-11">
+                                <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" value="{{ POST.nom ?? '' }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="prenom" class="col-xl-1 col-form-label">Prenom:</label>
+                            <div class="col-xl-11">
+                                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" value="{{ POST.prenom ?? '' }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mail" class="col-xl-1 col-form-label">Mail:</label>
+                            <div class="col-xl-11">
+                                <input type="email" class="form-control" id="mail" name="mail" placeholder="nom@example.com" value="{{ POST.mail ?? '' }}">
+                               </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="adresse" class="col-xl-1 col-form-label">Adresse:</label>
+                            <div class="col-xl-11">
+                                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="adresse" value="{{ POST.adresse ?? '' }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postale" class="col-xl-1 col-form-label">Postale:</label>
+                            <div class="col-xl-11">
+                                <input type="text" class="form-control" id="postale" name="postale" placeholder="Code postale" value="{{ POST.postale ?? '' }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="objet" class="col-xl-1 col-form-label">Objet:</label>
+                            <div class="col-xl-11">
+                                <select class="form-control" name="objet" id="objet">
+                                    <option disabled="true" selected>Information sur la cueillette</option>
+                                    <option>Information sur la ferme</option>
+                                    <option>Commande de paniers personnalisés</option>
+                                    <option>Reservations</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="message" class="col-xl-1 col-form-label">Message:</label>
+                            <div class="col-xl-11">
+                                <textarea class="form-control" id="message" name="message" rows="3">{{ POST.message ?? '' }}</textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+{% endblock %}
