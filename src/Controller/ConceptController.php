@@ -17,7 +17,7 @@ class ConceptController extends AbstractController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function conceptAction()
+    public function showConcept()
     {
         return $this->twig->render('concept.html.twig');
     }
