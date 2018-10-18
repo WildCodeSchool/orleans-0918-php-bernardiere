@@ -15,5 +15,8 @@ $routes = [
     ],
     'Admin' => [ // Controller
         ['adminIndex', '/admin', 'GET'], // action, url, method
+      ],
+    'Concept' => [ // Controller
+        ['showConcept', '/concept', 'GET'], // action, url, method
     ],
 ];
