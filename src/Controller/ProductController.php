@@ -22,15 +22,16 @@ class ProductController extends AbstractController
     public function show()
     {
         $productManager = new ProductManager($this->getPdo());
-        $products = $productManager->showByCategory();
+        $productsByCategories = $productManager->showByCategory();
 
-        $categories = array_column($products, 'category_title');
-        $categories = array_unique($categories);
+        foreach ($productsByCategories as $productByCategory){
+            $category = $productByCategory['category_title'];
+            $categoriesWithProducts[$category][] = $productByCategory;
+        }
 
-        return $this->twig->render('ourproducts.html.twig',
+        return $this->twig->render('ourProducts.html.twig',
             [
-                'categories' => $categories,
-                'products'=> $products
+                'categoriesWithProducts'=>$categoriesWithProducts,
             ]);
     }
 }

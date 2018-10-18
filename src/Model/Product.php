@@ -25,7 +25,7 @@ class Product
      *
      * @return Product
      */
-    public function setId($id): Product
+    public function setId(int $id): Product
     {
         $this->id = $id;
 
@@ -45,7 +45,7 @@ class Product
      *
      * @return Product
      */
-    public function setTitle($title): Product
+    public function setTitle(string $title): Product
     {
         $this->title = $title;
 
