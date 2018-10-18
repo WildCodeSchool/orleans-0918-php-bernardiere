@@ -38,7 +38,8 @@ abstract class AbstractController
         $this->twig = new Twig_Environment(
             $loader,
             [
-
+                'cache' => !APP_DEV,
+                'debug' => APP_DEV,
             ]
         );
         $this->twig->addExtension(new \Twig_Extension_Debug());

@@ -9,6 +9,10 @@
 
 namespace Model;
 
+
+/**
+ *
+ */
 class ItemManager extends AbstractManager
 {
     /**

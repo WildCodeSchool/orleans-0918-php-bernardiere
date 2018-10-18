@@ -1,12 +1,16 @@
 {
+    "name": "aurel/simple-mvc",
+    "description": "Simple from scratch PHP MVC",
     "name": "wilder11/orleans-0918-php-bernardiere",
     "authors": [
         {
-            "name": "Jessica Viel",
-            "email": "jessica.mylady@gmail.com"
+            "name": "Aurelien",
+            "email": "barbier.aurelien@wildcodeschool.fr"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
+        "php" : ">=7",
         "ext-pdo" : "*",
         "nikic/fast-route": "^1.2",
         "twig/twig": "^2.4"
