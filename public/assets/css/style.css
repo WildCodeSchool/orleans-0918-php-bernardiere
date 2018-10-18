@@ -1116,3 +1116,87 @@ li {
 .social-icons i:hover {
   opacity: 0.6;
 }
+
+/*--------------------------------------------------------------
+# Concept /Harvest/Farm/Shop
+--------------------------------------------------------------*/
+.title {
+  font-weight: normal;
+  font-size: 40px;
+  border: 1px solid #f1f1f1;
+  background-color: #82B541;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-shadow:1px 1px 2px gray;
+  text-align: center;
+}
+
+.subTitleConcept {
+  font-size: 20px;
+  font-weight: normal;
+  padding:5px;
+  padding-top: 15px;
+  box-shadow:-1px -1px 2px white;
+
+}
+
+.shadowText {
+  padding:10px;
+  box-shadow:-1px -1px 2px white;
+}
+
+.shadowTextFarm {
+  padding:10px;
+  box-shadow:2px 2px 2px gray,
+  -1px -1px 2px white;
+}
+
+.boutique {
+  padding: 5px;
+
+
+}
+
+.ferme {
+  padding: 5px;
+
+}
+
+.concept {
+  padding: 5px;
+
+}
+
+.textBoutique {
+  font-size: 20px;
+  font-family: bold;
+  padding:5px;
+}
+
+
+.button {
+  padding: 10px;
+  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20
+  font-weight: bold;
+  font-size  : 1em;
+  line-height: 150%;
+  display: block;
+  margin : auto;
+}
+
+.shopImg {
+  padding-top: 10px;
+}
+
+.farmImg {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.conceptImg {
+  padding-top: 10px;
+}
+
