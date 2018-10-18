@@ -14,6 +14,6 @@ $routes = [
         ['homeAction', '/', 'GET'], // action, url, method
     ],
     'Concept' => [ // Controller
-        ['conceptAction', '/concept', 'GET'], // action, url, method
+        ['showConcept', '/concept', 'GET'], // action, url, method
     ],
 ];
