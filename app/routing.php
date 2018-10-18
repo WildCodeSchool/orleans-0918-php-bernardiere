@@ -10,7 +10,10 @@
  */
 
 $routes = [
-    'Home' => [ // Controller
-        ['homeAction', '/', 'GET'], // action, url, method
+    'Home' => [
+        ['homeAction', '/', 'GET'],
+    ],
+    'Product' => [
+        ['show', '/ourproducts','GET'],
     ],
 ];

@@ -9,10 +9,6 @@
 
 namespace Model;
 
-
-/**
- *
- */
 class ItemManager extends AbstractManager
 {
     /**
@@ -73,4 +69,6 @@ class ItemManager extends AbstractManager
 
         return $statement->execute();
     }
+
+
 }

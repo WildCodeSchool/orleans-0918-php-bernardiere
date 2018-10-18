@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+    <h1>Nos Produits</h1>
+
+    {% for category in categories %}
+        <h2 class="{{ loop.first ? "" : "mt-5" }}">{{ category }}</h2>
+        <div class="row {{ loop.last ? "mb-5" : "" }}">
+
+                {% for product in products %}
+                    {% if product.category_title == category %}
+                        <div class="col-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ product.image }}" alt="Card product">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ product.name }}</h2>
+                                    <p class="card-text">{{ product.description_produit }}</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+        </div>
+    {% endfor %}
+    </div>
+
+
+
+{% endblock %}
