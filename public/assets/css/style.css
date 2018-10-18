@@ -900,6 +900,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Contact Section
 --------------------------------*/
+
+.usingForm {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 40px;
+  margin: 20px;
+}
+
+ul {
+  list-style:none;
+  padding: 20px;
+  margin: 5px;
+}
+
+li {
+  padding: 20px;
+}
+
 #contact {
   background: #f7f7f7;
   padding: 80px 0 40px 0;
