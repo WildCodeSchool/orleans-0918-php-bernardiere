@@ -11,6 +11,18 @@
 
 $routes = [
     'Home' => [ // Controller
-        ['homeAction', '/', 'GET'], // action, url, method
+        ['showHome', '/', 'GET'], // action, url, method
+    ],
+    'Admin' => [ // Controller
+        ['adminIndex', '/admin', 'GET'], // action, url, method
+    ],
+    'Contact' => [ // Controller
+        ['showContact', '/contact', 'GET'],  // action, url, method
+    ],
+    'Product' => [
+        ['show', '/ourproducts','GET'],
+    ],
+    'Concept' => [ // Controller
+        ['showConcept', '/concept', 'GET'], // action, url, method
     ],
 ];

@@ -44,7 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   overflow: visible;
-  background: #fff url("../img/preloader.svg") no-repeat center center;
 }
 
 /* Back to top button */
@@ -94,6 +93,9 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 997;
   background: rgba(0,0,0,0.5);
 }
+@media  {
+
+}
 
 #header #logo {
   float: left;
@@ -126,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   #header #logo img {
     max-height: 40px;
   }
+
 }
 
 #header.header-fixed {
@@ -174,6 +177,22 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   text-align: center;
 }
+@media (max-width: 1500px) {
+  #hero .hero-container {
+    margin: 10em;
+  }
+}
+@media (max-width: 800px) {
+  #hero .hero-container {
+    margin: 5em;
+  }
+}
+@media (max-width: 800px) {
+  #hero .hero-container {
+    margin: 0;
+  }
+}
+
 
 #hero h1 {
   margin: 30px 0 10px 0;
@@ -201,12 +220,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 2em;
 
 }
-
-@media (max-width: 768px) {
-  #hero p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 0;
+@media (max-width: 800px) {
+  #hero h1{
+    font-size: 4em;
+  }
+  #hero p{
+    font-size: 2em;
   }
 }
 
@@ -234,12 +253,18 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Nav Menu Essentials */
+
 .navbar-nav, .navbar-nav * {
   margin: 0;
   padding: 0;
   list-style: none;
-
 }
+@media (max-width: 991px) {
+  .navbar-nav{
+    background: rgba(0,0,0,0.8);
+  }
+}
+
 .navbar-nav a:hover {
   border-top: 4px solid #f3b27b;
   color: #f3b27b;
@@ -716,11 +741,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Call To Action Section
 --------------------------------*/
-#call-to-action {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/call-to-action-bg.jpg) fixed center center;
-  background-size: cover;
-  padding: 80px 0;
-}
 
 #call-to-action .cta-title {
   color: #fff;
@@ -900,6 +920,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Contact Section
 --------------------------------*/
+
+.usingForm {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 40px;
+  margin: 20px;
+}
+
+ul {
+  list-style:none;
+  padding: 20px;
+  margin: 5px;
+}
+
+#contact li {
+  padding: 20px;
+}
+
 #contact {
   background: #f7f7f7;
   padding: 80px 0 40px 0;
@@ -1098,3 +1136,101 @@ body.mobile-nav-active #mobile-nav-toggle {
 .social-icons i:hover {
   opacity: 0.6;
 }
+
+/*-----------------------------------------------------------------
+Barre d'adresse fixée sous la bannière
+------------------------------------------------------------------- */
+.adressbar{
+  background-color : #f5f5f5;
+  color : #000000;
+  line-height: 1em;
+  font-size : 15px;
+  padding-top : 5px;
+}
+.adressbar h3{
+  margin-bottom : 5px;
+}
+/*--------------------------------------------------------------
+# Concept /Harvest/Farm/Shop
+--------------------------------------------------------------*/
+.title {
+  font-weight: normal;
+  font-size: 40px;
+  border: 1px solid #f1f1f1;
+  background-color: #82B541;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-shadow:1px 1px 2px gray;
+  text-align: center;
+}
+
+.subTitleConcept {
+  font-size: 20px;
+  font-weight: normal;
+  padding:5px;
+  padding-top: 15px;
+  box-shadow:-1px -1px 2px white;
+
+}
+
+.shadowText {
+  padding:10px;
+  box-shadow:-1px -1px 2px white;
+}
+
+.shadowTextFarm {
+  padding:10px;
+  box-shadow:2px 2px 2px gray,
+  -1px -1px 2px white;
+}
+
+.boutique {
+  padding: 5px;
+
+
+}
+
+.ferme {
+  padding: 5px;
+
+}
+
+.concept {
+  padding: 5px;
+
+}
+
+.textBoutique {
+  font-size: 20px;
+  font-family: bold;
+  padding:5px;
+}
+
+
+.button {
+  padding: 10px;
+  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size  : 1em;
+  line-height: 150%;
+  display: block;
+  margin : auto;
+}
+
+.shopImg {
+  padding-top: 10px;
+}
+
+.farmImg {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.conceptImg {
+  padding-top: 10px;
+}
+
+
