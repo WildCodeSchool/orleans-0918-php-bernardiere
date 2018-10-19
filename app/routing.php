@@ -14,6 +14,10 @@ $routes = [
         ['homeAction', '/', 'GET'], // action, url, method
     ],
 
+    'Contact' => [ // Controller
+        ['showContact', '/contact', 'GET'],  // action, url, method
+     ],
+
     'Product' => [
         ['show', '/ourproducts','GET'],
 
