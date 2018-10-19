@@ -1,0 +1,22 @@
+<section id="team">
+    <div class="services-section">
+        <div class="container wow fadeInUp">
+
+            <div class="section-header">
+                <h3 class="section-title">Nos produits</h3>
+                <p class="section-description">Voici une sélection de produits disponible à la ferme</p>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="member">
+                        <div class="pic"><img src="{{ product.image }}" alt="{{ product.name }}"></div>
+                        <h4>{{ product.name }}</h4>
+                        <span><p>{{ product.description_produit }}</p></span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
