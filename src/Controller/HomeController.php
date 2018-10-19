@@ -19,7 +19,7 @@ class HomeController extends AbstractController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function homeAction()
+    public function showHome()
     {
         $homeManager = new HomeManager($this->getPdo());
         $products = $homeManager->selectRandomProduct();
