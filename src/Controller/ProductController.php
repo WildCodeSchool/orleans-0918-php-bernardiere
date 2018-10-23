@@ -28,7 +28,6 @@ class ProductController extends AbstractController
             $category = $productByCategory['category_title'];
             $categoriesWithProducts[$category][] = $productByCategory;
         }
-
         return $this->twig->render('ourProducts.html.twig',
             [
                 'categoriesWithProducts'=>$categoriesWithProducts,
