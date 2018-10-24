@@ -11,7 +11,7 @@ body{
 }
 
 .headblock{
-   text-align : center;
+    text-align : center;
     height : 200px;
     display: flex; /* contexte sur le parent */
     flex-direction: column; /* direction d'affichage verticale */
@@ -35,7 +35,8 @@ body{
     padding-top: 10px;
 }
 
-h3{
+
+h1{
     font-family : Roboto, sans-serif;
     font-style : italic;
     text-align : center;
@@ -59,4 +60,9 @@ h3{
 }
 .dropdown-divider{
     border-top : 1px solid #262515;
+}
+
+img {
+    width : 100px;
+    height: 50px;
 }
