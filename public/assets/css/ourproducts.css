@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 0.1em;
+    color: #999;
+    text-align: center;
+}
+
+a.btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 0.5em 0.5em;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 1.5em auto;
+    transition: 0.3s;
+    display: block;
+    width: 45%;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
+.card{
+    box-shadow: -9px 9px 8px -3px rgba(0,0,0,0.75);
+}

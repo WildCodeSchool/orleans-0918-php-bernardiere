@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+    font-family: Roboto ;
+    src: url('https://fonts.googleapis.com/css?family=Roboto');
+}
+
+body{
+    background-color : #FEFFE3;
+}
+
+.headblock{
+    text-align : center;
+    height : 200px;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center; /* alignement vertical */
+    background-color : #9E9755;
+    border-bottom : 2px solid #454225;
+    box-shadow: 0px 5px 3px #262515;
+}
+.headblock h1{
+    font-family : Roboto,sans-serif;
+    font-weight: bold;
+    font-size : 45px;
+    color : #FEFFE3;
+}
+
+.boutonedition{
+    text-align : center;
+}
+
+.boutonedition .btn-group{
+    padding-top: 10px;
+}
+
+
+h1{
+    font-family : Roboto, sans-serif;
+    font-style : italic;
+    text-align : center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.btn-group-vertical{
+    margin : auto;
+}
+
+.btn-secondary{
+    background-color : #9E9755;
+}
+
+.dropdown-menu{
+    background-color : #9E9755;
+}
+.dropdown-item{
+    color :#FEFFE3;
+}
+.dropdown-divider{
+    border-top : 1px solid #262515;
+}
+
+img {
+    width : 100px;
+    height: 50px;
+}

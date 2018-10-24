@@ -8,11 +8,22 @@
 
 namespace Controller;
 
+use Model\HomeManager;
 
 class HomeController extends AbstractController
 {
-    public function homeAction()
+    /**
+     * @param int $id
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+    public function showHome()
     {
-        return $this->twig->render('home.html.twig');
+        $homeManager = new HomeManager($this->getPdo());
+        $products = $homeManager->selectRandomProduct();
+
+        return $this->twig->render('home.html.twig', ['products'=>$products]);
     }
 }
