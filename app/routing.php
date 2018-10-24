@@ -15,12 +15,13 @@ $routes = [
     ],
     'Admin' => [ // Controller
         ['adminIndex', '/admin', 'GET'], // action, url, method
+        ['listItem', '/admin/items', 'GET'] //action, url, method
     ],
     'Contact' => [ // Controller
         ['showContact', '/contact', 'GET'],  // action, url, method
     ],
     'Product' => [
-        ['show', '/ourproducts','GET'],
+        ['show', '/ourproducts','GET'], // action, url, method
     ],
     'Concept' => [ // Controller
         ['showConcept', '/concept', 'GET'], // action, url, method
