@@ -1,13 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
+
  * User: wilder4
  * Date: 23/10/18
  * Time: 19:07
+10
+
  */
 
 namespace Model;
-
 
 class AdminManager extends AbstractManager
 {
@@ -17,31 +19,26 @@ class AdminManager extends AbstractManager
     const TABLE = 'product';
 
     /**
-     *  Initializes this class.
+     * ItemManager constructor.
+     * @param \PDO $pdo
      */
     public function __construct(\PDO $pdo)
     {
-        parent::__construct(self::TABLE, $pdo);
+        parent::__construct(self::TABLE,$pdo);
     }
 
-
     /**
-     * @param Item $item
+     * @param \Model\Product $product
      * @return int
      */
-
-    public function insert(Item $item): int
+    public function insert(Product $product): int
     {
-        // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-        $statement->bindValue('title', $item->getTitle(), \PDO::PARAM_STR);
-
-
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:name)");
+        $statement->bindValue('name', $product->getName(), \PDO::PARAM_STR);
         if ($statement->execute()) {
             return $this->pdo->lastInsertId();
         }
     }
-
 
     /**
      * @param int $id

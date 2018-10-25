@@ -77,5 +77,4 @@ class ProductManager extends AbstractManager
 
         return $statement->execute();
     }
-
 }
