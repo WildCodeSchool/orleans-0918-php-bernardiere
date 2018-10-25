@@ -8,7 +8,7 @@
 
 namespace Controller;
 use Model\ProductManager;
-
+use Model\Product;
 
 class AdminController extends AbstractController
 {
@@ -43,6 +43,22 @@ class AdminController extends AbstractController
             [
                 'categoriesWithProducts'=>$categoriesWithProducts,
             ]);
+    }
+
+    /**
+     * @param int $id
+     */
+    public function delete()
+    {
+        if (!empty($_POST)) {
+            // TODO : validations des valeurs saisies dans le form
+            // création d'un nouvel objet Item et hydratation avec les données du formulaire
+
+            $productManager = new ProductManager($this->getPdo());
+            $productManager->delete($_POST['id']);
+            header('Location: /admin/items');
+
+        }
     }
 
 }

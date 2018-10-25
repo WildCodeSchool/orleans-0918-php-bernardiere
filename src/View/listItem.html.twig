@@ -9,12 +9,13 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col"> Id du produit</th>
+                    <th scope="col">Id du produit</th>
                     <th scope="col">Nom du produit</th>
                     <th scope="col">Image produit</th>
                     <th scope="col">Début de récolte</th>
                     <th scope="col"> Fin de récolte</th>
                     <th scope="col">Description du produit</th>
+                    <th scope="col">Supprimer un produit</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,28 @@
                             <td>{{ product.product_begin }}</td>
                             <td>{{ product.product_end }}</td>
                             <td>{{ product.description_produit }}</td>
+                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#t-{{ product.id }}">
+                                        Supprimer un produit</button>
+                                <div class="modal fade" id="t-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression de ce produit?</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h3>{{ product.name }}</h3>
+                                                <form method="post" id="id" action="">
+                                                    <input type="text" value="{{ product.id }}" title="id" name="id" hidden >
+                                                    <input type="submit" value="Valider">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     {% endif %}
                 {% endfor %}

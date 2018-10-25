@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+use Model\Product;
 
 /**
  *
@@ -28,5 +29,16 @@ class ProductManager extends AbstractManager
             JOIN months mb ON mb.id = product.product_begin 
             JOIN months me ON me.id = product.product_end  
         ORDER BY product.category_id ASC', \PDO::FETCH_ASSOC)->fetchAll();
+    }
+
+    /**
+     * @param int $id
+     */
+    public function delete(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }

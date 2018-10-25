@@ -33,5 +33,7 @@ class ProductController extends AbstractController
                 'categoriesWithProducts'=>$categoriesWithProducts,
             ]);
     }
+
+
 }
 

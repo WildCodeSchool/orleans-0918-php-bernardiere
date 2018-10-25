@@ -10,6 +10,7 @@ namespace Model;
 
 
 
+
 class AdminManager extends AbstractManager
 {
     /**
@@ -42,3 +43,4 @@ class AdminManager extends AbstractManager
 
 
 }
+
