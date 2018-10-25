@@ -1,0 +1,82 @@
+<div class="container mt-5 mb-5">
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="category_id">Catégorie</label>
+            <select class="form-control" id="category_id" name="category_id">
+                {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.title }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% if errors.category_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors.category_error }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <label for="name">Nom du produit</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Fraise">
+        </div>
+        {% if errors.name_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors.name_error }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <label for="product_begin">Début de récolte</label>
+            <select class="form-control" id="product_begin" name="product_begin">
+                {% for month in months %}
+                <option value="{{ month.id }}">{{ month.name_month }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% if errors.begin_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors.begin_error }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <label for="product_end">Fin de récolte</label>
+            <select class="form-control" id="product_end" name="product_end">
+                {% for month in months %}
+                    <option value="{{ month.id }}">{{ month.name_month }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% if errors.end_error %}
+        <div class="alert alert-danger" role="alert">
+            {{ errors.end_error }}
+        </div>
+        {% endif %}
+        <div class="form-group">
+            <label for='upload'>Fichier à ajouter :</label>
+            <input id="upload" type="file" name="image"/>
+            <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+        </div>
+        {% if errors.image_error %}
+        <div class="alert alert-danger" role="alert">
+            {{ errors.image_error }}
+        </div>
+        {% endif %}
+        {% if errors.size_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors.size_error }}
+            </div>
+        {% endif %}
+        {% if errors.extension_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors.extension_error }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <label for="description_product">Description</label>
+            <textarea name="description_produit" id="description_produit" cols="120" rows="10"></textarea>
+        </div>
+        {% if errors.description_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ errors.description_error }}
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
