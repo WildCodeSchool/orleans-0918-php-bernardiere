@@ -23,7 +23,7 @@ class ProductManager extends AbstractManager
     public function showByCategory() : array
     {
         return $this->pdo->query('
-        SELECT product.*, category.title as category_title, mb.name_month mounth_begin, me.name_month mounth_end FROM ' . $this->table . ' 
+        SELECT product.*, category.title as category_title, mb.name_month month_begin, me.name_month month_end FROM ' . $this->table . ' 
             JOIN category ON category.id = product.category_id 
             JOIN months mb ON mb.id = product.product_begin 
             JOIN months me ON me.id = product.product_end  
