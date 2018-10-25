@@ -1,0 +1,96 @@
+.harvest {
+    padding: 4em 0;
+}
+
+
+
+.title {
+    color: #111111;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.subTitleConcept {
+    color: #111111;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: normal;
+    padding:5px;
+    padding-top: 15px;
+    box-shadow:-1px -1px 2px white;
+
+}
+
+.shadowText {
+    padding:10px;
+    box-shadow:-1px -1px 2px white;
+}
+
+.shadowTextFarm {
+    padding:10px;
+    box-shadow:2px 2px 2px gray,
+    -1px -1px 2px white;
+}
+
+.boutique {
+    padding: 5px;
+
+
+}
+
+.ferme {
+    padding: 5px;
+
+}
+
+.concept {
+    padding: 5px;
+
+}
+
+.textBoutique {
+    color: #111111;
+    text-align: justify;
+    font-size: 20px;
+}
+
+
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 0.5em 0.5em;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 1.5em auto;
+    transition: 0.3s;
+    display: block;
+    width: 45%;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
+.shopImg {
+    padding-top: 10px;
+}
+
+.farmImg {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.conceptImg {
+    padding-top: 10px;
+}
+
+#about {
+    background: #f5f5f5;
+}
