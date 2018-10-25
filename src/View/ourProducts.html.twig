@@ -13,37 +13,35 @@
                 <h2>{{ category }}</h2>
                 <div class="row">
                     {% for product in products %}
-                        {% if product.category_title == category %}
-                            <div class="col-lg-3 col-md-4 col-sm-6 mt-2 mb-2 wow bounceIn animated">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ product.image }}" alt="Card product" height=168px>
-                                    <div class="card-body">
-                                        <h3 class="card-title">{{ product.name }}</h3>
-                                        <p class="card-text">Période de Cueillette:</p>
-                                        <p> de {{ product.month_begin }} à {{ product.month_end }}</p>
-                                        <button type="button" class="btn" data-toggle="modal" data-target="#product-{{ product.id }}">Plus d'info...</button>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mt-2 mb-2 wow bounceIn animated">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ product.image }}" alt="Card product" height=168px>
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ product.name }}</h3>
+                                    <p class="card-text">Période de Cueillette:</p>
+                                    <p> de {{ product.month_begin }} à {{ product.month_end }}</p>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#product-{{ product.id }}">Plus d'info...</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="product-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="{{ product.id }}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <img class="imgModal" src="{{ product.image }}">
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4><b>{{ product.name }}</b></h4>
+                                        <p><b>Période de Cueillette: </b> de {{ product.month_begin }} à {{ product.month_end }}</p>
+                                        <p><b>Description: </b>{{ product.description_produit}}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Modal -->
-                            <div class="modal fade" id="product-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="{{ product.id }}" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <img class="imgModal" src="{{ product.image }}">
-                                        </div>
-                                        <div class="modal-body">
-                                            <h4><b>{{ product.name }}</b></h4>
-                                            <p><b>Période de Cueillette: </b> de {{ product.month_begin }} à {{ product.month_end }}</p>
-                                            <p><b>Description: </b>{{ product.description_produit}}</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
+                        </div>
                     {% endfor %}
                 </div>
             </div>
