@@ -113,10 +113,10 @@ class AdminController extends AbstractController
                 $product->setCategoryId($_POST['category_id']);
 
                 $id = $productManager->insert($product);
-                header('Location:/Admin/items');
+                header('Location:/admin/items');
             }
         }
-        return $this->twig->render('Admin/add.html.twig',
+        return $this->twig->render('add.html.twig',
             [
                 'categories' => $categories,
                 'months' => $months,
