@@ -57,8 +57,6 @@ class AdminController extends AbstractController
             $productManager = new ProductManager($this->getPdo());
             $productManager->delete($_POST['id']);
             header('Location: /admin/items');
-
         }
     }
-
 }
