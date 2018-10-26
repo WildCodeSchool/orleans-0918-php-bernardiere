@@ -1,0 +1,7 @@
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../images/banner.jpg") top center;
+    background-size: cover;
+    position: relative;
+}

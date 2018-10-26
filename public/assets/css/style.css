@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   background: url("../images/banner.jpg") top center;
   background-size: cover;
   position: relative;
@@ -577,10 +577,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   min-height: 300px;
   background: url("../images/aboutImg1.jpg") center top no-repeat;
   margin-bottom: 10px;
-}
-
-#about .about-container .content {
-  background: #fff;
 }
 
 #about .about-container .title {
@@ -1090,21 +1086,26 @@ ul {
   margin-top: 1em;
 }
 .footer-bottom p {
-  font-size: 1em;
-  color: #000;
-  font-weight: 400;
+  font-size: 1.1em;
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 10px 5px 5px #000000;
+
 }
 .footer-bottom a {
-  color:#16A667;
-  font-weight: 400;
+  color: #d7b788;
+  font-weight: 800;
+  font-size: 1.1em;
   text-transform: capitalize;
-  font-family: 'Exo', sans-serif;
+  font-family: 'Lobster', cursive;
+  text-shadow: 10px 5px 5px #000000;
 }
 .footer-bottom a:hover {
-  color: #000;
+  color: #f3b27b;
 }
 .footer-bottom p a {
   margin: 0 6px 0 6px;
+  font-family: 'Lobster', cursive;
 }
 .bottom-menu ul li {
   display: inline-block;
@@ -1112,11 +1113,17 @@ ul {
 }
 .bottom-menu ul li  a{
   text-transform: capitalize;
-  font-size: 1.4em;
-  color: #000;
+  font-size: 1.7em;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 800;
+  font-family: 'Lobster', cursive;
+  text-shadow: 10px 5px 5px #000000;
 }
+.bottom-menu ul li a:hover {
+  color: #f3b27b;
+}
+
 .footer-section {
   padding: 4em 0;
   text-align: center;
@@ -1128,6 +1135,7 @@ ul {
   background: url("../images/img-sprite1.png") no-repeat 0px 0px;
   display: inline-block;
   margin: 0 0 0 1em;
+
 }
 .social-icons i.icon1
 {
@@ -1150,87 +1158,3 @@ Barre d'adresse fixée sous la bannière
 .adressbar h3{
   margin-bottom : 5px;
 }
-/*--------------------------------------------------------------
-# Concept /Harvest/Farm/Shop
---------------------------------------------------------------*/
-.title {
-  font-weight: normal;
-  font-size: 40px;
-  border: 1px solid #f1f1f1;
-  background-color: #82B541;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
-  text-shadow:1px 1px 2px gray;
-  text-align: center;
-}
-
-.subTitleConcept {
-  font-size: 20px;
-  font-weight: normal;
-  padding:5px;
-  padding-top: 15px;
-  box-shadow:-1px -1px 2px white;
-
-}
-
-.shadowText {
-  padding:10px;
-  box-shadow:-1px -1px 2px white;
-}
-
-.shadowTextFarm {
-  padding:10px;
-  box-shadow:2px 2px 2px gray,
-  -1px -1px 2px white;
-}
-
-.boutique {
-  padding: 5px;
-
-
-}
-
-.ferme {
-  padding: 5px;
-
-}
-
-.concept {
-  padding: 5px;
-
-}
-
-.textBoutique {
-  font-size: 20px;
-  font-family: bold;
-  padding:5px;
-}
-
-
-.button {
-  padding: 10px;
-  margin: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-size  : 1em;
-  line-height: 150%;
-  display: block;
-  margin : auto;
-}
-
-.shopImg {
-  padding-top: 10px;
-}
-
-.farmImg {
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.conceptImg {
-  padding-top: 10px;
-}
-
-
