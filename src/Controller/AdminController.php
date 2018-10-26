@@ -14,7 +14,8 @@ use Model\MonthManager;
 
 class AdminController extends AbstractController
 {
-
+    const MAX_SIZE = 1000000;
+    const ALLOWED_EXTENSIONS = array('.png', '.gif', '.jpg', '.jpeg');
 
     /**
      * Display product listing
@@ -45,19 +46,21 @@ class AdminController extends AbstractController
         $monthManager = new MonthManager($this->getPdo());
         $months = $monthManager->selectAll();
         $errors = [];
+        $categoryList = [1,2,3,4];
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            if (!preg_match("/^[_0-9- ]+$/" ,$_POST['category_id'])){
+            if (!in_array($_POST['category_id'],$categoryList)){
                 $errors['category_error'] = "Veuillez entrer une categorie valide.";
             }
-            if (!preg_match("/^[_a-zA-Z0-9- ]+$/" ,$_POST['name'])){
+            if (!preg_match("/^[_a-zA-Z0-9- ]+$/" ,trim($_POST['name']))){
                 $errors['name_error'] = "Veuillez entrer un nom valide.";
             }
-            if (!preg_match("/^[_0-9- ]+$/" ,$_POST['product_begin'])){
+            if (!preg_match("/^[_0-9- ]+$/" ,trim($_POST['product_begin']))){
                 $errors['begin_error'] = "Veuillez entrer un mois valide.";
             }
-            if (!preg_match("/^[_0-9- ]+$/" ,$_POST['product_end'])){
+            if (!preg_match("/^[_0-9- ]+$/" ,trim($_POST['product_end']))){
                 $errors['end_error'] = "Veuillez entrer un mois valide.";
             }
             if (empty($_POST['category_id'])) {
@@ -81,14 +84,12 @@ class AdminController extends AbstractController
             if (!empty($_FILES['image']['name'])) {
                 $dir = 'assets/images/bdd/';
                 $files = basename($_FILES['image']['name']);
-                $max_size = 1000000;
                 $size = filesize($_FILES['image']['tmp_name']);
-                $extensions = array('.png', '.gif', '.jpg', '.jpeg');
                 $extension = strrchr($_FILES['image']['name'], '.');
-                if (!in_array($extension, $extensions)) {
+                if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
                     $errors['extension_error'] = 'Le format du fichier doit être de type png, gif, jpg, jpeg';
                 }
-                if ($size > $max_size) {
+                if ($size > self::MAX_SIZE) {
                     $errors['size_error'] = 'Le poids du fichier doit être inférieur à 1 Mo';
                 }
                 if (!isset($error)) {
@@ -105,15 +106,15 @@ class AdminController extends AbstractController
             if (count($errors) == 0) {
                 $productManager = new ProductManager($this->getPdo());
                 $product = new Product();
-                $product->setName($_POST['name']);
-                $product->setProductBegin($_POST['product_begin']);
-                $product->setProductEnd($_POST['product_end']);
+                $product->setName(trim($_POST['name']));
+                $product->setProductBegin(trim($_POST['product_begin']));
+                $product->setProductEnd(trim($_POST['product_end']));
                 $product->setImage($_FILES['uniqImage']);
-                $product->setDescriptionProduct($_POST['description_produit']);
-                $product->setCategoryId($_POST['category_id']);
+                $product->setDescriptionProduct(trim($_POST['description_produit']));
+                $product->setCategoryId(trim($_POST['category_id']));
 
                 $id = $productManager->insert($product);
-                header('Location:/admin/items');
+                header('Location:/admin/list');
             }
         }
         return $this->twig->render('add.html.twig',
