@@ -29,7 +29,7 @@ class AdminController extends AbstractController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function listItem()
+    public function list()
     {
         $productManager = new ProductManager($this->getPdo());
         $productsByCategories = $productManager->showByCategory();
@@ -39,7 +39,7 @@ class AdminController extends AbstractController
             $categoriesWithProducts[$category][] = $productByCategory;
         }
 
-        return $this->twig->render('listItem.html.twig',
+        return $this->twig->render('list.html.twig',
             [
                 'categoriesWithProducts'=>$categoriesWithProducts,
             ]);
@@ -51,12 +51,10 @@ class AdminController extends AbstractController
     public function delete()
     {
         if (!empty($_POST)) {
-            // TODO : validations des valeurs saisies dans le form
-            // création d'un nouvel objet Item et hydratation avec les données du formulaire
 
             $productManager = new ProductManager($this->getPdo());
             $productManager->delete($_POST['id']);
-            header('Location: /admin/items');
+            header('Location: /admin/list');
 
         }
     }
