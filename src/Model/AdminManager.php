@@ -3,16 +3,8 @@
  * Created by PhpStorm.
 
  * User: wilder4
-<<<<<<< HEAD
  * Date: 26/10/18
  * Time: 09:38
-=======
- * Date: 23/10/18
- * Time: 19:07
-10
-
->>>>>>> 082c8d4f1d1558794930023f72dfb55019a22aa8
- */
 
 namespace Model;
 
