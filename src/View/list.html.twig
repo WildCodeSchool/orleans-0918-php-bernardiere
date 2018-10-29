@@ -10,7 +10,8 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Id du produit</th>
-                    <th scope="col">Nom du produit</th>                    <th scope="col">Image produit</th>
+                    <th scope="col">Nom du produit</th>
+                    <th scope="col">Image produit</th>
                     <th scope="col">Début de récolte</th>
                     <th scope="col"> Fin de récolte</th>
                     <th scope="col">Description du produit</th>
@@ -19,8 +20,7 @@
             </thead>
             <tbody>
                 {% for product in products %}
-                    {% if product.category_title == category %}
-                        <tr>
+                            <tr>
                             <th scope="row">{{ product.id }}</th>
                             <td>{{ product.name }}</td>
                             <td><img src="{{ product.image }}" alt="Image Produit"></td>
@@ -50,7 +50,6 @@
                                 </div>
                             </td>
                         </tr>
-                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>
