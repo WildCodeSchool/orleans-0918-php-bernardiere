@@ -8,7 +8,7 @@
 
 namespace Controller;
 use Model\ProductManager;
-
+use Model\Product;
 
 class AdminController extends AbstractController
 {
@@ -29,7 +29,7 @@ class AdminController extends AbstractController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function listItem()
+    public function list()
     {
         $productManager = new ProductManager($this->getPdo());
         $productsByCategories = $productManager->showByCategory();
@@ -39,10 +39,25 @@ class AdminController extends AbstractController
             $categoriesWithProducts[$category][] = $productByCategory;
         }
 
-        return $this->twig->render('listItem.html.twig',
+        return $this->twig->render('list.html.twig',
             [
                 'categoriesWithProducts'=>$categoriesWithProducts,
             ]);
     }
 
+    /**
+     * @param int $id
+     */
+    public function delete()
+    {
+        if (!empty($_POST)) {
+
+            $productManager = new ProductManager($this->getPdo());
+            $productManager->delete($_POST['id']);
+
+            header('Location: /admin/list');
+        }
+    }
+
 }
+
