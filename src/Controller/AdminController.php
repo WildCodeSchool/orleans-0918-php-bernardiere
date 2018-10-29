@@ -54,11 +54,9 @@ class AdminController extends AbstractController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            var_dump($_POST);
             foreach ($_POST as $postName=>$postValue){
                 $cleanPost[$postName] = trim($postValue);
             }
-
             if (!in_array($_POST['category_id'],$categoryList)){
                 $errors['category_error'] = "Veuillez entrer une categorie valide.";
             }
@@ -129,7 +127,7 @@ class AdminController extends AbstractController
             [
                 'categories' => $categories,
                 'months' => $months,
-                'POST' => $cleanPost,
+                'POST' => $_POST,
                 'errors' => $errors,
 
             ]);
