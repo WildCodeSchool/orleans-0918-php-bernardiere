@@ -15,7 +15,7 @@ use Model\MonthManager;
 class AdminController extends AbstractController
 {
     const MAX_SIZE = 1000000;
-    const ALLOWED_EXTENSIONS = array('png', 'gif', 'jpg', 'jpeg');
+    const ALLOWED_EXTENSIONS = ['png', 'gif', 'jpg', 'jpeg'];
 
     /**
      * Display product listing
@@ -45,43 +45,41 @@ class AdminController extends AbstractController
         $monthManager = new MonthManager($this->getPdo());
         $months = $monthManager->selectAll();
         $errors = [];
-        for ($i=1;$i<=count($categories);$i++){
-            $categoryList[$i] = $i;
-        }
-        for ($i=1;$i<=count($months);$i++){
-            $monthList[$i] = $i;
-        }
+
+        $categoryIds = array_column($categories, 'id');
+        $monthsNumber = array_column($months, 'number_month');
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($_POST as $postName=>$postValue){
                 $cleanPost[$postName] = trim($postValue);
             }
-            if (!in_array($_POST['category_id'],$categoryList)){
+            if (!in_array($cleanPost['category_id'],$categoryIds)){
                 $errors['category_error'] = "Veuillez entrer une categorie valide.";
             }
-            if (!preg_match("/^[_a-zA-Z0-9- ]+$/" ,trim($_POST['name']))){
+            if (!preg_match("/^[_a-zA-Z0-9- ]+$/" ,$cleanPost['name'])){
                 $errors['name_error'] = "Veuillez entrer un nom valide.";
             }
-            if (!in_array($_POST['product_begin'],$monthList)){
+
+            if (!in_array($cleanPost['product_begin'],$monthsNumber)){
                 $errors['begin_error'] = "Veuillez entrer un mois valide.";
             }
-            if (!in_array($_POST['product_end'],$monthList)){
+            if (!in_array($cleanPost['product_end'],$monthsNumber)){
                 $errors['end_error'] = "Veuillez entrer un mois valide.";
             }
-            if (empty($_POST['category_id'])) {
+            if (empty($cleanPost['category_id'])) {
                 $errors['category_error'] = 'Veuillez renseigner une catégorie au produit';
             }
-            if (empty($_POST['name'])) {
+            if (empty($cleanPost['name'])) {
                 $errors['name_error'] = 'Veuillez renseigner un nom au produit';
             }
-            if (empty($_POST['product_begin'])) {
+            if (empty($cleanPost['product_begin'])) {
                 $errors['begin_error'] = 'Veuillez renseigner un mois au produit';
             }
-            if (empty($_POST['product_end'])) {
+            if (empty($cleanPost['product_end'])) {
                 $errors['end_error'] = 'Veuillez renseigner un nom au produit';
             }
-            if (empty($_POST['description_produit'])) {
+            if (empty($cleanPost['description_produit'])) {
                 $errors['description_error'] = 'Veuillez ajouter une description';
             }
             if (empty($_FILES['image']['name'])){
@@ -96,7 +94,7 @@ class AdminController extends AbstractController
                     $errors['extension_error'] = 'Le format du fichier doit être de type ' . implode(self::ALLOWED_EXTENSIONS,',') . ' .';
                 }
                 if ($size > self::MAX_SIZE) {
-                    $errors['size_error'] = 'Le poids du fichier doit être inférieur à 1 Mo';
+                    $errors['size_error'] = 'Le poids du fichier doit être inférieur à'. self::MAX_SIZE /1000000 .' Mo';
                 }
                 if (!isset($error)) {
                     $files = uniqid('image', true) . '.' .$extension;
@@ -127,7 +125,7 @@ class AdminController extends AbstractController
             [
                 'categories' => $categories,
                 'months' => $months,
-                'POST' => $_POST,
+                'POST' => $cleanPost,
                 'errors' => $errors,
 
             ]);
