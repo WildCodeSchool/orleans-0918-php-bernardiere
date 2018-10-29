@@ -15,7 +15,7 @@ use Model\MonthManager;
 class AdminController extends AbstractController
 {
     const MAX_SIZE = 1000000;
-    const ALLOWED_EXTENSIONS = array('.png', '.gif', '.jpg', '.jpeg');
+    const ALLOWED_EXTENSIONS = array('png', 'gif', 'jpg', 'jpeg');
 
     /**
      * Display product listing
@@ -42,14 +42,22 @@ class AdminController extends AbstractController
 
         $categoryManager = new CategoryManager($this->getPdo());
         $categories = $categoryManager->selectAll();
-
         $monthManager = new MonthManager($this->getPdo());
         $months = $monthManager->selectAll();
         $errors = [];
-        $categoryList = [1,2,3,4];
+        for ($i=1;$i<=count($categories);$i++){
+            $categoryList[$i] = $i;
+        }
+        for ($i=1;$i<=count($months);$i++){
+            $monthList[$i] = $i;
+        }
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            var_dump($_POST);
+            foreach ($_POST as $postName=>$postValue){
+                $cleanPost[$postName] = trim($postValue);
+            }
 
             if (!in_array($_POST['category_id'],$categoryList)){
                 $errors['category_error'] = "Veuillez entrer une categorie valide.";
@@ -57,10 +65,10 @@ class AdminController extends AbstractController
             if (!preg_match("/^[_a-zA-Z0-9- ]+$/" ,trim($_POST['name']))){
                 $errors['name_error'] = "Veuillez entrer un nom valide.";
             }
-            if (!preg_match("/^[_0-9- ]+$/" ,trim($_POST['product_begin']))){
+            if (!in_array($_POST['product_begin'],$monthList)){
                 $errors['begin_error'] = "Veuillez entrer un mois valide.";
             }
-            if (!preg_match("/^[_0-9- ]+$/" ,trim($_POST['product_end']))){
+            if (!in_array($_POST['product_end'],$monthList)){
                 $errors['end_error'] = "Veuillez entrer un mois valide.";
             }
             if (empty($_POST['category_id'])) {
@@ -85,33 +93,33 @@ class AdminController extends AbstractController
                 $dir = 'assets/images/bdd/';
                 $files = basename($_FILES['image']['name']);
                 $size = filesize($_FILES['image']['tmp_name']);
-                $extension = strrchr($_FILES['image']['name'], '.');
+                $extension = substr(strrchr($_FILES['image']['name'], '.'),1);
                 if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
-                    $errors['extension_error'] = 'Le format du fichier doit être de type png, gif, jpg, jpeg';
+                    $errors['extension_error'] = 'Le format du fichier doit être de type ' . implode(self::ALLOWED_EXTENSIONS,',') . ' .';
                 }
                 if ($size > self::MAX_SIZE) {
                     $errors['size_error'] = 'Le poids du fichier doit être inférieur à 1 Mo';
                 }
                 if (!isset($error)) {
-                    $files = uniqid('image', true) . $extension;
+                    $files = uniqid('image', true) . '.' .$extension;
                     if (move_uploaded_file($_FILES['image']['tmp_name'], $dir . $files)) {
                         $_FILES['uniqImage'] = $dir . $files;
                     }
 
                 } else {
-                    echo $error;
+                    return $error;
                 }
             }
 
-            if (count($errors) == 0) {
+            if (empty($errors)) {
                 $productManager = new ProductManager($this->getPdo());
                 $product = new Product();
-                $product->setName(trim($_POST['name']));
-                $product->setProductBegin(trim($_POST['product_begin']));
-                $product->setProductEnd(trim($_POST['product_end']));
+                $product->setName($cleanPost['name']);
+                $product->setProductBegin($cleanPost['product_begin']);
+                $product->setProductEnd($cleanPost['product_end']);
                 $product->setImage($_FILES['uniqImage']);
-                $product->setDescriptionProduct(trim($_POST['description_produit']));
-                $product->setCategoryId(trim($_POST['category_id']));
+                $product->setDescriptionProduct($cleanPost['description_produit']);
+                $product->setCategoryId($cleanPost['category_id']);
 
                 $id = $productManager->insert($product);
                 header('Location:/admin/list');
@@ -121,7 +129,7 @@ class AdminController extends AbstractController
             [
                 'categories' => $categories,
                 'months' => $months,
-                'POST' => $_POST,
+                'POST' => $cleanPost,
                 'errors' => $errors,
 
             ]);
