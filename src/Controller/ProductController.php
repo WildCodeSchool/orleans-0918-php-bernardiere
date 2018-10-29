@@ -11,9 +11,6 @@ use Model\ProductManager;
 class ProductController extends AbstractController
 {
     /**
-     * Display product informations specified by $id
-     *
-     * @param int $id
      * @return string
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
