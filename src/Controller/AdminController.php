@@ -45,10 +45,9 @@ class AdminController extends AbstractController
         $monthManager = new MonthManager($this->getPdo());
         $months = $monthManager->selectAll();
         $errors = [];
-
+        $cleanPost = [];
         $categoryIds = array_column($categories, 'id');
         $monthsNumber = array_column($months, 'number_month');
-
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($_POST as $postName=>$postValue){
