@@ -11,7 +11,7 @@ namespace Model;
 
 class MonthManager extends AbstractManager
 {
-    const TABLE = 'months';
+    const TABLE = 'month';
 
     public function __construct(\PDO $pdo)
     {

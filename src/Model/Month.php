@@ -9,7 +9,7 @@
 namespace Model;
 
 
-class Months
+class Month
 {
  private $id;
 
