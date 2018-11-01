@@ -12,6 +12,8 @@ namespace Model;
 class Month
 {
  private $id;
+ private $numbermonth;
+ private $namemonth;
 
     /**
      * @return mixed
@@ -28,5 +30,39 @@ class Month
     {
         $this->id = $id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNumbermonth()
+    {
+        return $this->numbermonth;
+    }
+
+    /**
+     * @param mixed $numbermonth
+     */
+    public function setNumbermonth($numbermonth)
+    {
+        $this->numbermonth = $numbermonth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNamemonth()
+    {
+        return $this->namemonth;
+    }
+
+    /**
+     * @param mixed $namemonth
+     */
+    public function setNamemonth($namemonth)
+    {
+        $this->namemonth = $namemonth;
+    }
+
+
 
 }
