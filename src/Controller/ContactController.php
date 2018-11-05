@@ -7,6 +7,7 @@ use \Swift_Mailer;
 use \Swift_Message;
 
 
+
 class ContactController extends AbstractController
 {
 
@@ -16,62 +17,63 @@ class ContactController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            foreach ($_POST as $postName=>$postValue){
+                $cleanPost[$postName]=trim($postValue);
+            }
 
-            if (!preg_match("#[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ' ]$#", trim($_POST["name"]))) {
+
+            if (!preg_match("#[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ' ]$#", $cleanPost["name"])) {
                 $errors["nameError"] = "Veuillez entrer un nom valide.";
             }
 
-            if (!preg_match("#[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ' ]$#", trim($_POST["firstname"]))) {
+            if (!preg_match("#[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ' ]$#", $cleanPost["firstname"])) {
                 $errors["firstnameError"] = "Veuillez entrer un prénom valide.";
             }
 
-            if (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/", trim($_POST["mail"]))) {
+            if (!filter_var($cleanPost["mail"], FILTER_VALIDATE_EMAIL)) {
                 $errors["mailError"] = "Veuillez entrer un mail valide.";
             }
 
-            if (!preg_match("/[a-zA-Z0-9]/", trim($_POST["adress"]))) {
-                $errors["adressError"] = "Veuillez entrer une adresse valide.";
-            }
 
-            if (preg_match("/[0-9]{6}/", trim($_POST["zipcode"]))) {
+            if (preg_match("/[0-9]{6}/", $cleanPost["zipcode"])) {
                 $errors["zipcodeError"] = "Veuillez entrer un code postal valide.";
             }
 
 
             //start validation
             //not empty
-            if (empty($_POST['name'])) {
+            if (empty($cleanPost['name'])) {
 
                 $errors['nameError'] = "Veuillez entrer votre nom.";
             }
 
-            if (empty($_POST['firstname'])) {
+            if (empty($cleanPost['firstname'])) {
 
                 $errors['firstnameError'] = "Veuillez entrer votre prénom.";
             }
 
-            if (empty($_POST['mail'])) {
+            if (empty($cleanPost['mail'])) {
 
                 $errors['mailError'] = "Veuillez entrer votre email.";
             }
 
-            if (empty($_POST['adress'])) {
+            if (empty($cleanPost['adress'])) {
 
                 $errors['adressError'] = "Veuillez entrer votre adresse.";
             }
 
-            if (empty($_POST['message'])) {
+            if (empty($cleanPost['message'])) {
 
                 $errors['messageError'] = "Veuillez entrer votre message.";
             }
 
-            if (empty($_POST['zipcode'])) {
+            if (empty($cleanPost['zipcode'])) {
 
                 $errors['zipcodeError'] = "Veuillez entrer votre code postal.";
             }
 
             //Check
-            if (count($errors) == 0) {
+            if (empty($errors)) {
 
                 // Create the SMTP Transport
                 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
@@ -108,6 +110,6 @@ class ContactController extends AbstractController
                 exit();
             }
         }
-        return $this->twig->render('form.html.twig', ['POST' => $_POST,'errors' => $errors]);
+        return $this->twig->render('form.html.twig', ['data' => $cleanPost,'errors' => $errors]);
     }
 }
