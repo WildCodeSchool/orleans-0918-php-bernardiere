@@ -1,25 +1,25 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
-    <link href="assets/css/style.css" rel="stylesheet">
+
     <link rel="stylesheet" href="/assets/css/ourproducts.css">
+    <link href="assets/css/style.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        <h1>Nos Produits</h1>
+        <h2 class="product-title mt-5">Nos Produits</h2>
         {% for category, products in categoriesWithProducts %}
-            <div class="mt-5 mb-5">
-                <h2>{{ category }}</h2>
+            <div class="mt-5 mb-2">
+                <h3 class="category-title">{{ category }}</h3>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-lg-3 col-md-4 col-sm-6 mt-2 mb-2 wow bounceIn animated">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-5 wow bounceIn animated">
                             <div class="card">
                                 <img class="card-img-top" src="{{ product.image }}" alt="Card product" height=168px>
                                 <div class="card-body">
-                                    <h3 class="card-title">{{ product.name }}</h3>
-                                    <p class="card-text">Période de Cueillette:</p>
-                                    <p> de {{ product.month_begin }} à {{ product.month_end }}</p>
+                                    <h4 class="card-title mt-2 mb-4">{{ product.name }}</h4>
+                                    <p class="card-text">Période de Cueillette :</br> de {{ product.month_begin }} à {{ product.month_end }}</p>
                                     <button type="button" class="btn" data-toggle="modal" data-target="#product-{{ product.id }}">Plus d'info...</button>
                                 </div>
                             </div>
@@ -32,9 +32,9 @@
                                         <img class="imgModal" src="{{ product.image }}">
                                     </div>
                                     <div class="modal-body">
-                                        <h4><b>{{ product.name }}</b></h4>
-                                        <p><b>Période de Cueillette: </b> de {{ product.month_begin }} à {{ product.month_end }}</p>
-                                        <p><b>Description: </b>{{ product.description_produit}}</p>
+                                        <h4>{{ product.name }}</h4>
+                                        <p><b>Période de Cueillette :</b> de {{ product.month_begin }} à {{ product.month_end }}</p>
+                                        <p><b>Description :</b> {{ product.description_produit}}</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
