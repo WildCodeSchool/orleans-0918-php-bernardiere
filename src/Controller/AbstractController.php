@@ -23,7 +23,6 @@ abstract class AbstractController
      * @var Twig_Environment
      */
     protected $twig;
-
     /**
      * @var \PDO
      */

@@ -15,7 +15,9 @@ $routes = [
     ],
     'Admin' => [ // Controller
         ['adminIndex', '/admin', 'GET'], // action, url, method
-        ['listItem', '/admin/items', 'GET'] //action, url, method
+        ['add', '/admin/add', ['GET', 'POST']], // action, url, method
+        ['list', '/admin/list', 'GET'], //action, url, method
+        ['delete', '/admin/list','POST'], //action, url, method
     ],
     'Contact' => [ // Controller
         ['showContact', '/contact', 'GET'],  // action, url, method
