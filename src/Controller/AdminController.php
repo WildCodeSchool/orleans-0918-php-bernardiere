@@ -98,7 +98,7 @@ class AdminController extends AbstractController
                 if (!isset($error)) {
                     $files = uniqid('image', true) . '.' .$extension;
                     if (move_uploaded_file($_FILES['image']['tmp_name'], $dir . $files)) {
-                        $_FILES['uniqImage'] = $dir . $files;
+                        $_FILES['uniqImage'] = '/' .$dir . $files;
                     }
 
                 } else {

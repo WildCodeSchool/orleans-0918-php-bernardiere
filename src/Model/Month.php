@@ -11,14 +11,14 @@ namespace Model;
 
 class Month
 {
- private $id;
- private $numbermonth;
- private $namemonth;
+    private $id;
+    private $numberMonth;
+    private $nameMonth;
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -26,7 +26,7 @@ class Month
     /**
      * @param mixed $id
      */
-    public function setId($id)
+    public function setId($id): Month
     {
         $this->id = $id;
     }
@@ -34,33 +34,33 @@ class Month
     /**
      * @return mixed
      */
-    public function getNumbermonth()
+    public function getNumberMonth(): int
     {
-        return $this->numbermonth;
+        return $this->numberMonth;
     }
 
     /**
-     * @param mixed $numbermonth
+     * @param mixed $numberMonth
      */
-    public function setNumbermonth($numbermonth)
+    public function setNumberMonth($numberMonth): Month
     {
-        $this->numbermonth = $numbermonth;
+        $this->numberMonth = $numberMonth;
     }
 
     /**
      * @return mixed
      */
-    public function getNamemonth()
+    public function getNameMonth(): int
     {
-        return $this->namemonth;
+        return $this->nameMonth;
     }
 
     /**
-     * @param mixed $namemonth
+     * @param mixed $nameMonth
      */
-    public function setNamemonth($namemonth)
+    public function setNameMonth($nameMonth): Month
     {
-        $this->namemonth = $namemonth;
+        $this->nameMonth = $nameMonth;
     }
 
 
