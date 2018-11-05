@@ -26,7 +26,7 @@ class Month
     /**
      * @param mixed $id
      */
-    public function setId($id): Month
+    public function setId($id): void
     {
         $this->id = $id;
     }
@@ -42,7 +42,7 @@ class Month
     /**
      * @param mixed $numberMonth
      */
-    public function setNumberMonth($numberMonth): Month
+    public function setNumberMonth($numberMonth): void
     {
         $this->numberMonth = $numberMonth;
     }
