@@ -12,9 +12,9 @@
 {% block content %}
     <div class="container">
         <table class="calendar">
-            <thead class="thead-dark">
+            <thead>
             <tr>
-                <th scope="col">Nom du produit</th>
+                <th class="products_name" scope="col">Nom du produit</th>
                 {% for month in months %}
                     <th>{{ month }}</th>
                 {% endfor %}
@@ -25,7 +25,7 @@
                 <tr>
                     <th>{{ product.name }}</th>
                     {% for month in 1..12 %}
-                        <td class="affiche_calendrier" {% if month >=  product_begin and month <= product_end %}  {% endif %}></td>
+                        <td  {% if month >=  product.product_begin and month <= product.product_end %} class="bg-primary" {% endif %}></td>
                     {% endfor %}
                 </tr>
             {% endfor %}
