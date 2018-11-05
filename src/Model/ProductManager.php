@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+use Model\Product;
 
 /**
  *
@@ -48,8 +49,7 @@ class ProductManager extends AbstractManager
             return $this->pdo->lastInsertId();
         }
     }
-
-
+  
     /**
      * @param int $id
      */
@@ -77,4 +77,5 @@ class ProductManager extends AbstractManager
 
         return $statement->execute();
     }
+
 }
