@@ -12,39 +12,65 @@
                 <div class="col-xl-12">
                     <form>
                         <div class="form-group row">
-                            <label for="nom" class="col-xl-1 col-form-label">Nom:</label>
+                            <label for="name" class="col-xl-1 col-form-label">Nom:</label>
                             <div class="col-xl-11">
-                                <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" value="{{ POST.nom ?? '' }}">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="nom" value="{{ POST.name ?? '' }}">
+                                {% if errors.nameError %}
+                                    <div class="alert text-danger" role="alert">
+                                        {{ errors.nameError }}
+                                    </div>
+                                {% endif %}
+
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="prenom" class="col-xl-1 col-form-label">Prenom:</label>
+                            <label for="firstname" class="col-xl-1 col-form-label">Prenom:</label>
                             <div class="col-xl-11">
-                                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" value="{{ POST.prenom ?? '' }}">
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="prenom" value="{{ POST.firstname ?? '' }}">
+                                {% if errors.firstnameError %}
+                                    <div class="alert text-danger" role="alert">
+                                        {{ errors.firstnameError }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="mail" class="col-xl-1 col-form-label">Mail:</label>
                             <div class="col-xl-11">
                                 <input type="email" class="form-control" id="mail" name="mail" placeholder="nom@example.com" value="{{ POST.mail ?? '' }}">
+                                {% if errors.mailError %}
+                                    <div class="alert text-danger" role="alert">
+                                        {{ errors.mailError }}
+                                    </div>
+                                {% endif %}
                                </div>
                         </div>
                         <div class="form-group row">
-                            <label for="adresse" class="col-xl-1 col-form-label">Adresse:</label>
+                            <label for="adress" class="col-xl-1 col-form-label">Adresse:</label>
                             <div class="col-xl-11">
-                                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="adresse" value="{{ POST.adresse ?? '' }}">
+                                <input type="text" class="form-control" id="adress" name="adress" placeholder="adresse" value="{{ POST.adress ?? '' }}">
+                                {% if errors.adressError %}
+                                    <div class="alert text-danger" role="alert">
+                                        {{ errors.adressError }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="postale" class="col-xl-1 col-form-label">Postale:</label>
+                            <label for="zipcode" class="col-xl-1 col-form-label">Code postal:</label>
                             <div class="col-xl-11">
-                                <input type="text" class="form-control" id="postale" name="postale" placeholder="Code postale" value="{{ POST.postale ?? '' }}">
+                                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Code postale" value="{{ POST.zipcode ?? '' }}">
+                                {% if errors.zipcodeError %}
+                                    <div class="alert text-danger" role="alert">
+                                        {{ errors.zipcodeError }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="objet" class="col-xl-1 col-form-label">Objet:</label>
                             <div class="col-xl-11">
-                                <select class="form-control" name="objet" id="objet">
+                                <select class="form-control" name="object" id="object">
                                     <option disabled="true" selected>Information sur la cueillette</option>
                                     <option>Information sur la ferme</option>
                                     <option>Commande de paniers personnalisés</option>
@@ -57,6 +83,11 @@
                             <label for="message" class="col-xl-1 col-form-label">Message:</label>
                             <div class="col-xl-11">
                                 <textarea class="form-control" id="message" name="message" rows="3">{{ POST.message ?? '' }}</textarea>
+                                {% if errors.messageError %}
+                                    <div class="alert text-danger" role="alert">
+                                        {{ errors.messageError }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Envoyer</button>

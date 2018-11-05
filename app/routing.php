@@ -18,8 +18,8 @@ $routes = [
         ['delete', '/item/delete/{id:\d+}', 'GET'], // action, url, method
     ],
 
-    'Form' => [ //Controller
-        ['veriform', '/contact', ['GET', 'POST']],
+    'Contact' => [ //Controller
+        ['formcheck', '/contact', ['GET', 'POST']],
     ],
 
 ];
