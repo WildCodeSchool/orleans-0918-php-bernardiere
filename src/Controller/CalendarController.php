@@ -19,7 +19,7 @@ class CalendarController extends AbstractController
         $products = $productManager->showByCategory();
 
         return $this->twig->render('harvest_calendar.html.twig', [
-            'products'=>$products,
+            'products' => $products,
         ]);
     }
 }
