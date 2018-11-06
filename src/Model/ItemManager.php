@@ -9,7 +9,6 @@
 
 namespace Model;
 
-
 /**
  *
  */
@@ -62,7 +61,7 @@ class ItemManager extends AbstractManager
      * @param Item $item
      * @return int
      */
-    public function update(Item $item):int
+    public function update(Item $item): int
     {
 
         // prepared request

@@ -4,7 +4,7 @@
             <label for="category_id">Catégorie</label>
             <select class="form-control" id="category_id" name="category_id">
                 {% for category in categories %}
-                <option value="{{ category.id }}">{{ category.title }}</option>
+                    <option value="{{ category.id }}">{{ category.title }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -26,7 +26,7 @@
             <label for="product_begin">Début de récolte</label>
             <select class="form-control" id="product_begin" name="product_begin">
                 {% for month in months %}
-                <option value="{{ month.id }}">{{ month.name_month }}</option>
+                    <option value="{{ month.id }}">{{ month.name_month }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -44,19 +44,19 @@
             </select>
         </div>
         {% if errors.end_error %}
-        <div class="alert alert-danger" role="alert">
-            {{ errors.end_error }}
-        </div>
+            <div class="alert alert-danger" role="alert">
+                {{ errors.end_error }}
+            </div>
         {% endif %}
         <div class="form-group">
             <label for='upload'>Fichier à ajouter :</label>
             <input id="upload" type="file" name="image"/>
-            <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="1048576"/>
         </div>
         {% if errors.image_error %}
-        <div class="alert alert-danger" role="alert">
-            {{ errors.image_error }}
-        </div>
+            <div class="alert alert-danger" role="alert">
+                {{ errors.image_error }}
+            </div>
         {% endif %}
         {% if errors.size_error %}
             <div class="alert alert-danger" role="alert">
