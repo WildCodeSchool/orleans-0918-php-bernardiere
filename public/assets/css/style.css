@@ -77,9 +77,8 @@ h2 {
 }
 
 .back-to-top:hover {
-    background: #f3b27b;
-    color: #fff;
-}
+  background: #A5CE45;
+  color: #fff;
 
 /*--------------------------------------------------------------
 # Header
@@ -275,8 +274,8 @@ h2 {
 }
 
 .navbar-nav a:hover {
-    border-top: 4px solid #f3b27b;
-    color: #f3b27b;
+  border-top: 4px solid #A5CE45;
+  color: #A5CE45;
 }
 
 .navbar-nav ul {
@@ -1109,16 +1108,16 @@ ul {
 }
 
 .footer-bottom a {
-    color: #d7b788;
-    font-weight: 800;
-    font-size: 1.1em;
-    text-transform: capitalize;
-    font-family: 'Lobster', cursive;
-    text-shadow: 10px 5px 5px #000000;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1em;
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
+  text-shadow: 10px 5px 5px #000000;
 }
 
 .footer-bottom a:hover {
-    color: #f3b27b;
+  color: #A5CE45;
 }
 
 .footer-bottom p a {
@@ -1142,7 +1141,7 @@ ul {
 }
 
 .bottom-menu ul li a:hover {
-    color: #f3b27b;
+  color: #A5CE45;
 }
 
 .footer-section {
