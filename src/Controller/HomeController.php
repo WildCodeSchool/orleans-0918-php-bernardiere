@@ -13,7 +13,6 @@ use Model\HomeManager;
 class HomeController extends AbstractController
 {
     /**
-     * @param int $id
      * @return string
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
@@ -24,6 +23,6 @@ class HomeController extends AbstractController
         $homeManager = new HomeManager($this->getPdo());
         $products = $homeManager->selectRandomProduct();
 
-        return $this->twig->render('home.html.twig', ['products'=>$products]);
+        return $this->twig->render('home.html.twig', ['products' => $products]);
     }
 }

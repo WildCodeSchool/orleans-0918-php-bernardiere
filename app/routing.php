@@ -19,9 +19,6 @@ $routes = [
         ['list', '/admin/list', 'GET'], //action, url, method
         ['delete', '/admin/list', 'POST'], //action, url, method
     ],
-    'Contact' => [ // Controller
-        ['showContact', '/contact', 'GET'],  // action, url, method
-    ],
     'Product' => [
         ['show', '/ourproducts', 'GET'], // action, url, method
     ],

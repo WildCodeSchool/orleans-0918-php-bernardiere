@@ -6,5 +6,5 @@
  * Time: 09:59
  */
 
- define('APP_login_USER', 'user');
- define('APP_login_PWD', 'password');
+ define('APP_LOGIN_USER', 'user');
+ define('APP_LOGIN_PWD', 'password');
