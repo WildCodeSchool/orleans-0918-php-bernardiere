@@ -16,8 +16,8 @@ class ContactController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            foreach ($_POST as $postName=>$postValue){
-                $cleanPost[$postName]=trim($postValue);
+            foreach ($_POST as $postName => $postValue) {
+                $cleanPost[$postName] = trim($postValue);
             }
 
 
@@ -90,16 +90,16 @@ class ContactController extends AbstractController
                 $message->setSubject($cleanPost['object']);
 
                 // Set the "From address"
-                $message->setFrom([$cleanPost['mail'] => $cleanPost['name'].' '.$cleanPost['firstname'].' '.$cleanPost['mail']]);
+                $message->setFrom([$cleanPost['mail'] => $cleanPost['name'] . ' ' . $cleanPost['firstname'] . ' ' . $cleanPost['mail']]);
 
-                $message->addTo(APP_LOGIN_USER, $cleanPost['name'].' '.$cleanPost['firstname']  );
+                $message->addTo(APP_LOGIN_USER, $cleanPost['name'] . ' ' . $cleanPost['firstname']);
 
 
                 // Set the plain-text "Body"
                 $message->setBody('Adresse Postale :' . $cleanPost['zipcode']);
 
                 // Set a "Body"
-                $message->addPart( $cleanPost['message']);
+                $message->addPart($cleanPost['message']);
 
 
                 // Send the message
@@ -109,5 +109,6 @@ class ContactController extends AbstractController
                 exit();
             }
         }
-        return $this->twig->render('contact.html.twig', ['data' => $cleanPost,'errors' => $errors]);
+        return $this->twig->render('contact.html.twig', ['data' => $cleanPost, 'errors' => $errors]);
+    }
 }
