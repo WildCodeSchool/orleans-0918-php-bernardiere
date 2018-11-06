@@ -9,7 +9,7 @@
 --------------------------------------------------------------*/
 body {
   background: #fff;
-  color: #666666;
+  color: #000000;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -573,10 +573,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* About Us Section
 --------------------------------*/
 
-img {
+.bernapix {
   overflow: hidden;
-  max-height: 450px;
-  min-width: 370px;
+  height: 450px;
+  width: 540px;
 }
 
 #about .about-container .title {
