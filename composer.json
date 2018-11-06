@@ -12,7 +12,9 @@
     "require": {
         "ext-pdo" : "*",
         "nikic/fast-route": "^1.2",
-        "twig/twig": "^2.4"
+        "twig/twig": "^2.4",
+        "swiftmailer/swiftmailer": "^6.0",
+        "twig/extensions": "^1.5"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*"

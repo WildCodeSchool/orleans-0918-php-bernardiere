@@ -5,57 +5,53 @@
 
 
 .title {
-    color: #111111;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
 }
 
-.subTitleConcept {
-    color: #111111;
-    text-align: justify;
-    font-size: 20px;
-    font-weight: normal;
-    padding:5px;
-    padding-top: 15px;
-    box-shadow:-1px -1px 2px white;
+p {
+    margin: 0;
+}
 
+.subTitleConcept {
+    color: #000000;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: normal;
+    padding-top: 15px;
 }
 
 .shadowText {
-    padding:10px;
-    box-shadow:-1px -1px 2px white;
+    font-size: 16px;
+    color: #000000;
 }
 
 .shadowTextFarm {
-    padding:10px;
-    box-shadow:2px 2px 2px gray,
-    -1px -1px 2px white;
+    font-size: 16px;
+    color: #000000;
 }
 
 .boutique {
     padding: 5px;
-
-
 }
 
 .ferme {
     padding: 5px;
-
 }
 
 .concept {
     padding: 5px;
-
 }
 
 .textBoutique {
-    color: #111111;
+    color: #000000;
     text-align: justify;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 
@@ -65,9 +61,8 @@
     color: black;
     padding: 0.5em 0.5em;
     text-align: center;
-
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     margin: 1.5em auto;
     transition: 0.3s;
     display: block;

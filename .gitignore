@@ -2,4 +2,6 @@
 /temp/*
 *.cache
 app/db.php
+app/login_mail.php
 .idea
+
