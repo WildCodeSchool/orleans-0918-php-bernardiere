@@ -22,7 +22,7 @@ class CalendarController extends AbstractController
 
         return $this->twig->render('harvest_calendar.html.twig', [
             'products'=>$products,
-            'months' => ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil.','Août', 'Sept.', 'Oct.', 'Nov.', 'Dec.'],
+            'months' => ['Jan.', 'Fev.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.','Août', 'Sept.', 'Oct.', 'Nov.', 'Dec.'],
         ]);
     }
 }
