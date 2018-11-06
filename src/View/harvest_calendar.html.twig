@@ -15,8 +15,10 @@
             <thead class="thead-white">
             <tr>
                 <th scope="col">Nom du produit</th>
-                {% for month in months %}
-                    <th>{{ month }}</th>
+                {% for month in 1..12 %}
+                    <th class="{{ "now"|date('m') == month ? 'now' }}" >
+                        {{ month|date('1970-'~month~'-01')|localizeddate('none', 'none', locale, null, 'MMM')}}
+                    </th>
                 {% endfor %}
             </tr>
             </thead>
@@ -25,7 +27,9 @@
                 <tr>
                     <th><a href="/ourproducts">{{ product.name }}</a></th>
                     {% for month in 1..12 %}
-                        <td  {% if month >=  product.product_begin and month <= product.product_end %} class="bg-success" {% endif %}></td>
+                        <td class="
+                            {{ month >= product.product_begin and month <= product.product_end ? 'filled' }}
+                        " ></td>
                     {% endfor %}
                 </tr>
             {% endfor %}
