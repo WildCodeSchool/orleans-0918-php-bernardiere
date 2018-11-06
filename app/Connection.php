@@ -40,7 +40,7 @@ class Connection
     {
         try {
             $this->pdoConnection = new PDO(
-                'mysql:host='.APP_DB_HOST.'; dbname='.APP_DB_NAME.'; charset=utf8',
+                'mysql:host='.APP_DB_HOST.';dbname='.APP_DB_NAME.';charset=utf8',
                 APP_DB_USER,
                 APP_DB_PWD
             );

@@ -7,7 +7,6 @@ use \Swift_Mailer;
 use \Swift_Message;
 
 
-
 class ContactController extends AbstractController
 {
 
@@ -111,5 +110,4 @@ class ContactController extends AbstractController
             }
         }
         return $this->twig->render('contact.html.twig', ['data' => $cleanPost,'errors' => $errors]);
-    }
 }

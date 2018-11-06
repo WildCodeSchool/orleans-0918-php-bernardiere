@@ -1,0 +1,9 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <a class="btn btn-dark btn-block offset-3 col-6 mt-5 mb-5" href="/admin/list" role="button">Voir la liste des produits</a>
+    <h1>Ajouter un nouveau produit</h1>
+</div>
+    {% include 'form.html.twig' %}
+{% endblock %}

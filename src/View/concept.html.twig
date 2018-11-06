@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/concept.css">
+{% endblock %}
+
+{% block content %}
+    {% include 'concept_harvest.html.twig' %}
+    {% include 'concept_farm.html.twig' %}
+    {% include 'concept_shop.html.twig' %}
+{% endblock %}

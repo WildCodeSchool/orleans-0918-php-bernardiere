@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link href="assets/css/home.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    {% include 'home_products.html.twig' %}
+    {% include 'home_description.html.twig' %}
+    {% include 'home_map.html.twig' %}
+{% endblock %}
