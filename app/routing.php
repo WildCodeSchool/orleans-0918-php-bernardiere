@@ -28,4 +28,9 @@ $routes = [
     'Concept' => [ // Controller
         ['showConcept', '/concept', 'GET'], // action, url, method
     ],
+
+    'Contact' => [ //Controller
+        ['formcheck', '/contact', ['GET', 'POST']],
+    ],
+
 ];

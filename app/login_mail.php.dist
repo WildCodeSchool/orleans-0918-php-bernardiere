@@ -1,0 +1,10 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: vince
+ * Date: 19/10/18
+ * Time: 09:59
+ */
+
+ define('APP_login_USER', 'user');
+ define('APP_login_PWD', 'password');
