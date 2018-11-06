@@ -921,9 +921,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .usingForm {
   font-weight: bold;
-  font-size: 20px;
-  padding: 40px;
-  margin: 20px;
+  font-size: 25px;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 ul {
@@ -937,8 +937,9 @@ ul {
 }
 
 #contact {
-  background: #f7f7f7;
-  padding: 80px 0 40px 0;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #contact #google-map {
