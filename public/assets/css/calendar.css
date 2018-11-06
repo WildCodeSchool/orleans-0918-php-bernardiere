@@ -23,7 +23,7 @@ th, td {
 
 thead {
     font-size: 14pt;
-    background-color: #3e8e41;
+    background-color: #A5CE45;
     color: white;
 }
 
@@ -32,7 +32,7 @@ tr {
 }
 
 .now {
-    background-color: #183f6c;
+    background-color: #3e8e41;
     color: white;
 }
 
@@ -60,4 +60,13 @@ tr:hover > .filled {
 
 table a {
     color: #3e8e41;
+}
+
+table a:hover {
+    color: #A5CE45;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 20px;
 }
