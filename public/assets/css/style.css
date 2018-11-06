@@ -573,10 +573,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* About Us Section
 --------------------------------*/
 
-#about .about-container .background {
-  min-height: 300px;
-  background: url("../images/aboutImg1.jpg") center top no-repeat;
-  margin-bottom: 10px;
+img {
+  overflow: hidden;
+  max-height: 450px;
+  min-width: 370px;
 }
 
 #about .about-container .title {
@@ -593,6 +593,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #about .about-container p {
   line-height: 26px;
+  text-align: left;
+  margin-right: 3%;
 }
 
 #about .about-container p:last-child {
