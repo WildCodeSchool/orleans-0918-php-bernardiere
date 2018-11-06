@@ -29,7 +29,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Lobster', cursive;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -230,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -556,11 +556,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 .section-header .section-title {
-  font-size: 32px;
-  color: #111;
-  text-transform: uppercase;
+  font-size: 40px;
+  color: #a5ce45;
+  font-family: 'Lobster', cursive;
   text-align: center;
-  font-weight: 700;
   margin-bottom: 5px;
 }
 
@@ -576,7 +575,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .bernapix {
   overflow: hidden;
   height: 450px;
-  width: 540px;
+  object-fit: cover;
 }
 
 #about .about-container .title {
@@ -660,7 +659,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #facts .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
 
@@ -759,7 +758,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #call-to-action .cta-btn {
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -888,9 +887,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member h4 {
-  font-weight: 700;
   margin-bottom: 2px;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 #team .member span {
@@ -1053,9 +1051,6 @@ ul {
   font-size: 3.5em;
   text-transform: capitalize;
   margin-bottom: 1.5em;
-  color: #394c53;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
 }
 .services-sections {
   padding: 4em 0;
@@ -1066,9 +1061,6 @@ ul {
   font-size: 3.5em;
   text-transform: capitalize;
   margin-bottom: 1.5em;
-  color: #394c53;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
 }
 
 
@@ -1156,7 +1148,7 @@ Barre d'adresse fixée sous la bannière
   line-height: 1em;
   font-size : 18px;
   padding-top : 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
   padding-bottom : 5px;
 }
