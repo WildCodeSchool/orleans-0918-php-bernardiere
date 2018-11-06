@@ -18,11 +18,8 @@ class CalendarController extends AbstractController
         $productManager = new ProductManager($this->getPdo());
         $products = $productManager->showByCategory();
 
-
-
         return $this->twig->render('harvest_calendar.html.twig', [
             'products'=>$products,
-            'months' => ['Jan.', 'Fev.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.','Août', 'Sept.', 'Oct.', 'Nov.', 'Dec.'],
         ]);
     }
 }
