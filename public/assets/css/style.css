@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: #f3b27b;
+  background: #A5CE45;
   color: #fff;
 }
 
@@ -266,8 +266,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-nav a:hover {
-  border-top: 4px solid #f3b27b;
-  color: #f3b27b;
+  border-top: 4px solid #A5CE45;
+  color: #A5CE45;
 }
 
 .navbar-nav ul {
@@ -1095,7 +1095,7 @@ ul {
 
 }
 .footer-bottom a {
-  color: #d7b788;
+  color: #ffffff;
   font-weight: 800;
   font-size: 1.1em;
   text-transform: capitalize;
@@ -1103,7 +1103,7 @@ ul {
   text-shadow: 10px 5px 5px #000000;
 }
 .footer-bottom a:hover {
-  color: #f3b27b;
+  color: #A5CE45;
 }
 .footer-bottom p a {
   margin: 0 6px 0 6px;
@@ -1123,7 +1123,7 @@ ul {
   text-shadow: 10px 5px 5px #000000;
 }
 .bottom-menu ul li a:hover {
-  color: #f3b27b;
+  color: #A5CE45;
 }
 
 .footer-section {
