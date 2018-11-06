@@ -110,6 +110,6 @@ class ContactController extends AbstractController
                 exit();
             }
         }
-        return $this->twig->render('form.html.twig', ['data' => $cleanPost,'errors' => $errors]);
+        return $this->twig->render('contact.html.twig', ['data' => $cleanPost,'errors' => $errors]);
     }
 }
