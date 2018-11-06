@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class Month
 {
     private $id;
@@ -62,7 +61,4 @@ class Month
     {
         $this->nameMonth = $nameMonth;
     }
-
-
-
 }
