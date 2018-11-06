@@ -1,11 +1,10 @@
 <?php
+
 namespace Controller;
-// ... ajoute ces 2 use
 
 use \Swift_SmtpTransport;
 use \Swift_Mailer;
 use \Swift_Message;
-
 
 class ContactController extends AbstractController
 {
@@ -13,10 +12,9 @@ class ContactController extends AbstractController
     public function formcheck()
     {
         $errors = [];
-        $cleanPost =[];
+        $cleanPost = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             foreach ($_POST as $postName => $postValue) {
                 $cleanPost[$postName] = trim($postValue);
             }
@@ -26,7 +24,8 @@ class ContactController extends AbstractController
                 $errors["nameError"] = "Veuillez entrer un nom valide.";
             }
 
-            if (!preg_match("#[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ' ]$#", $cleanPost["firstname"])) {
+            if (!preg_match("#[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ' ]$#", $cleanPost
+            ["firstname"])) {
                 $errors["firstnameError"] = "Veuillez entrer un prénom valide.";
             }
 
@@ -43,38 +42,31 @@ class ContactController extends AbstractController
             //start validation
             //not empty
             if (empty($cleanPost['name'])) {
-
                 $errors['nameError'] = "Veuillez entrer votre nom.";
             }
 
             if (empty($cleanPost['firstname'])) {
-
                 $errors['firstnameError'] = "Veuillez entrer votre prénom.";
             }
 
             if (empty($cleanPost['mail'])) {
-
                 $errors['mailError'] = "Veuillez entrer votre email.";
             }
 
             if (empty($cleanPost['adress'])) {
-
                 $errors['adressError'] = "Veuillez entrer votre adresse.";
             }
 
             if (empty($cleanPost['message'])) {
-
                 $errors['messageError'] = "Veuillez entrer votre message.";
             }
 
             if (empty($cleanPost['zipcode'])) {
-
                 $errors['zipcodeError'] = "Veuillez entrer votre code postal.";
             }
 
             //Check
             if (empty($errors)) {
-
                 // Create the SMTP Transport
                 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
                     ->setUsername(APP_LOGIN_USER)
@@ -91,7 +83,8 @@ class ContactController extends AbstractController
                 $message->setSubject($cleanPost['object']);
 
                 // Set the "From address"
-                $message->setFrom([$cleanPost['mail'] => $cleanPost['name'] . ' ' . $cleanPost['firstname'] . ' ' . $cleanPost['mail']]);
+                $message->setFrom([$cleanPost['mail'] => $cleanPost['name'] . ' ' . $cleanPost['firstname'] . ' ' .
+                    $cleanPost['mail']]);
 
                 $message->addTo(APP_LOGIN_USER, $cleanPost['name'] . ' ' . $cleanPost['firstname']);
 

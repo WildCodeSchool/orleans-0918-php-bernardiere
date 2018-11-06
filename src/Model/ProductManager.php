@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+
 use Model\Product;
 
 /**
@@ -21,10 +22,11 @@ class ProductManager extends AbstractManager
         parent::__construct(self::TABLE, $pdo);
     }
 
-    public function showByCategory() : array
+    public function showByCategory(): array
     {
         return $this->pdo->query('
-        SELECT product.*, category.title as category_title, mb.name_month month_begin, me.name_month month_end FROM ' . $this->table . ' 
+        SELECT product.*, category.title as category_title, mb.name_month month_begin, me.name_month month_end 
+        FROM ' . $this->table . ' 
             JOIN category ON category.id = product.category_id 
             JOIN month mb ON mb.id = product.product_begin 
 
@@ -50,7 +52,7 @@ class ProductManager extends AbstractManager
             return $this->pdo->lastInsertId();
         }
     }
-  
+
     /**
      * @param int $id
      */
@@ -67,7 +69,7 @@ class ProductManager extends AbstractManager
      * @param Item $item
      * @return int
      */
-    public function update(Product $product):int
+    public function update(Product $product): int
     {
 
         // prepared request
@@ -78,5 +80,4 @@ class ProductManager extends AbstractManager
 
         return $statement->execute();
     }
-
 }
