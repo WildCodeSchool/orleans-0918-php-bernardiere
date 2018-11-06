@@ -1,6 +1,6 @@
-h2, h3 {
-    font-family: 'Lobster', cursive;
-    color: #3e8e41;
+h2, h3, h4{
+    color: #000000;
+    font-family: "Open Sans", sans-serif;
 }
 
 h2 {
