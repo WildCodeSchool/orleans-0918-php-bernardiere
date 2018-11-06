@@ -88,19 +88,19 @@ class ContactController extends AbstractController
                 $message = new Swift_Message();
 
                 // Set a "subject"
-                $message->setSubject($_POST['object']);
+                $message->setSubject($cleanPost['object']);
 
                 // Set the "From address"
-                $message->setFrom([$_POST['mail'] => $_POST['name'].' '.$_POST['firstname'].' '.$_POST['mail']]);
+                $message->setFrom([$cleanPost['mail'] => $cleanPost['name'].' '.$cleanPost['firstname'].' '.$cleanPost['mail']]);
 
-                $message->addTo(APP_LOGIN_USER, $_POST['name'].' '.$_POST['firstname']  );
+                $message->addTo(APP_LOGIN_USER, $cleanPost['name'].' '.$cleanPost['firstname']  );
 
 
                 // Set the plain-text "Body"
-                $message->setBody('Adresse Postale :' . $_POST['zipcode']);
+                $message->setBody('Adresse Postale :' . $cleanPost['zipcode']);
 
                 // Set a "Body"
-                $message->addPart( $_POST['message']);
+                $message->addPart( $cleanPost['message']);
 
 
                 // Send the message
