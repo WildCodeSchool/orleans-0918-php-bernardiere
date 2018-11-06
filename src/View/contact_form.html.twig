@@ -24,9 +24,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="firstname" class="col-xl-1 col-form-label">Prenom:</label>
+                        <label for="firstname" class="col-xl-1 col-form-label">Prénom:</label>
                         <div class="col-xl-11">
-                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="prenom"
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="prénom"
                                    value="{{ data.firstname ?? '' }}">
                             {% if errors.firstnameError %}
                                 <div class="alert text-danger" role="alert">
@@ -38,7 +38,7 @@
                     <div class="form-group row">
                         <label for="mail" class="col-xl-1 col-form-label">Mail:</label>
                         <div class="col-xl-11">
-                            <input type="email" class="form-control" id="mail" name="mail" placeholder="nom@example.com"
+                            <input type="email" class="form-control" id="mail" name="mail" placeholder="nom@exemple.fr"
                                    value="{{ data.mail ?? '' }}">
                             {% if errors.mailError %}
                                 <div class="alert text-danger" role="alert">
@@ -63,7 +63,7 @@
                         <label for="zipcode" class="col-xl-1 col-form-label">Code postal:</label>
                         <div class="col-xl-11">
                             <input type="text" class="form-control" id="zipcode" name="zipcode"
-                                   placeholder="Code postal" value="{{ data.zipcode ?? '' }}">
+                                   placeholder="code postal" value="{{ data.zipcode ?? '' }}">
                             {% if errors.zipcodeError %}
                                 <div class="alert text-danger" role="alert">
                                     {{ errors.zipcodeError }}
