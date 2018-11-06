@@ -1,0 +1,33 @@
+td{
+    border:1px dotted black;
+    border-bottom-width: 0px;
+}
+
+tbody td {
+    width:70px;
+}
+tr td:last-child {
+    border-right-width: 0px;
+}
+
+
+th, td{
+    text-align : center;
+}
+
+
+.table{
+    margin-bottom: 80px;
+    margin-top: 80px;
+
+}
+
+
+thead:first-child{
+    font-size: 20px;
+}
+
+
+tr {
+    margin:0.25em;
+}

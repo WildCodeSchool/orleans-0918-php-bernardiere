@@ -28,6 +28,10 @@ $routes = [
     'Concept' => [ // Controller
         ['showConcept', '/concept', 'GET'], // action, url, method
     ],
+  
+    'Calendar' => [ // Controller
+        ['show', '/calendar', 'GET'], // action, url, method
+    ],
 
     'Contact' => [ //Controller
         ['formcheck', '/contact', ['GET', 'POST']],
