@@ -8,7 +8,6 @@
 
 namespace Controller;
 
-
 class ConceptController extends AbstractController
 {
     /**

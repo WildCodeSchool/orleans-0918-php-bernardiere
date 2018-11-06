@@ -52,7 +52,7 @@ class Item
      *
      * @return Item
      */
-    public function setTitle($title):Item
+    public function setTitle($title): Item
     {
         $this->title = $title;
 

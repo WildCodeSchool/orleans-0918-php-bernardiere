@@ -7,11 +7,11 @@
  */
 
 namespace Controller;
+
 use Model\Product;
 use Model\ProductManager;
 use Model\CategoryManager;
 use Model\MonthManager;
-
 
 class AdminController extends AbstractController
 {
@@ -30,6 +30,7 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('index_admin.html.twig');
     }
+
     /**
      * Display product creation page
      *
@@ -51,20 +52,20 @@ class AdminController extends AbstractController
         $monthsNumber = array_column($months, 'number_month');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            foreach ($_POST as $postName=>$postValue){
+            foreach ($_POST as $postName => $postValue) {
                 $cleanPost[$postName] = trim($postValue);
             }
-            if (!in_array($cleanPost['category_id'],$categoryIds)){
+            if (!in_array($cleanPost['category_id'], $categoryIds)) {
                 $errors['category_error'] = "Veuillez entrer une categorie valide.";
             }
-            if (!preg_match("/^[_a-zA-Z0-9- ]+$/" ,$cleanPost['name'])){
+            if (!preg_match("/^[_a-zA-Z0-9- ]+$/", $cleanPost['name'])) {
                 $errors['name_error'] = "Veuillez entrer un nom valide.";
             }
 
-            if (!in_array($cleanPost['product_begin'],$monthsNumber)){
+            if (!in_array($cleanPost['product_begin'], $monthsNumber)) {
                 $errors['begin_error'] = "Veuillez entrer un mois valide.";
             }
-            if (!in_array($cleanPost['product_end'],$monthsNumber)){
+            if (!in_array($cleanPost['product_end'], $monthsNumber)) {
                 $errors['end_error'] = "Veuillez entrer un mois valide.";
             }
             if (empty($cleanPost['category_id'])) {
@@ -82,26 +83,27 @@ class AdminController extends AbstractController
             if (empty($cleanPost['description_produit'])) {
                 $errors['description_error'] = 'Veuillez ajouter une description';
             }
-            if (empty($_FILES['image']['name'])){
+            if (empty($_FILES['image']['name'])) {
                 $errors['image_error'] = 'Veuillez ajouter une image';
             }
             if (!empty($_FILES['image']['name'])) {
                 $dir = 'assets/images/bdd/';
                 $files = basename($_FILES['image']['name']);
                 $size = filesize($_FILES['image']['tmp_name']);
-                $extension = substr(strrchr($_FILES['image']['name'], '.'),1);
+                $extension = substr(strrchr($_FILES['image']['name'], '.'), 1);
                 if (!in_array($extension, self::ALLOWED_EXTENSIONS)) {
-                    $errors['extension_error'] = 'Le format du fichier doit être de type ' . implode(self::ALLOWED_EXTENSIONS,',') . ' .';
+                    $errors['extension_error'] = 'Le format du fichier doit être de type ' .
+                        implode(self::ALLOWED_EXTENSIONS, ',') . ' .';
                 }
                 if ($size > self::MAX_SIZE) {
-                    $errors['size_error'] = 'Le poids du fichier doit être inférieur à'. self::MAX_SIZE /1000000 .' Mo';
+                    $errors['size_error'] = 'Le poids du fichier doit être inférieur à' .
+                        self::MAX_SIZE / 1000000 . ' Mo';
                 }
                 if (!isset($error)) {
-                    $files = uniqid('image', true) . '.' .$extension;
+                    $files = uniqid('image', true) . '.' . $extension;
                     if (move_uploaded_file($_FILES['image']['tmp_name'], $dir . $files)) {
-                        $_FILES['uniqImage'] = '/' .$dir . $files;
+                        $_FILES['uniqImage'] = '/' . $dir . $files;
                     }
-
                 } else {
                     return $error;
                 }
@@ -121,13 +123,11 @@ class AdminController extends AbstractController
                 header('Location:/admin/list');
             }
         }
-        return $this->twig->render('add.html.twig',
-            [
+        return $this->twig->render('add.html.twig', [
                 'categories' => $categories,
                 'months' => $months,
                 'POST' => $cleanPost,
                 'errors' => $errors,
-
             ]);
     }
 
@@ -142,30 +142,23 @@ class AdminController extends AbstractController
         $productManager = new ProductManager($this->getPdo());
         $productsByCategories = $productManager->showByCategory();
 
-        foreach ($productsByCategories as $productByCategory){
+        foreach ($productsByCategories as $productByCategory) {
             $category = $productByCategory['category_title'];
             $categoriesWithProducts[$category][] = $productByCategory;
         }
 
-        return $this->twig->render('list.html.twig',
-            [
-                'categoriesWithProducts'=>$categoriesWithProducts,
-            ]);
+        return $this->twig->render('list.html.twig', ['categoriesWithProducts' => $categoriesWithProducts,]);
     }
-
     /**
      * @param int $id
      */
     public function delete()
     {
         if (!empty($_POST)) {
-
             $productManager = new ProductManager($this->getPdo());
             $productManager->delete($_POST['id']);
 
             header('Location: /admin/list');
         }
     }
-
 }
-

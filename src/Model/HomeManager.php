@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class HomeManager extends AbstractManager
 {
     const TABLE = 'product';
@@ -20,6 +19,7 @@ class HomeManager extends AbstractManager
 
     public function selectRandomProduct(): array
     {
-        return $this->pdo->query('SELECT * FROM ' . $this->table . ' ORDER BY RAND() ' . ' LIMIT 3 ',\PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdo->query('SELECT * FROM ' . $this->table . ' 
+        ORDER BY RAND() ' . ' LIMIT 3 ', \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }

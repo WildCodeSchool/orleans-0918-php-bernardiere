@@ -1,7 +1,6 @@
 <?php
 /**
  * Created by PhpStorm.
-
  * User: wilder4
  * Date: 26/10/18
  * Time: 09:38
@@ -39,4 +38,3 @@ class AdminManager extends AbstractManager
         $statement->bindValue('category_id', $product->getCategoryId(), \PDO::PARAM_INT);
     }
 }
-

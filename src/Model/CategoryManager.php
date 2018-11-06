@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class CategoryManager extends AbstractManager
 {
     const TABLE = 'category';
@@ -17,6 +16,7 @@ class CategoryManager extends AbstractManager
     {
         parent::__construct(self::TABLE, $pdo);
     }
+
     public function selectOneById(int $categoryId)
     {
         // prepared request
