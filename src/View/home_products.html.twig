@@ -8,11 +8,10 @@
             </div>
             <div class="row">
                 {% for product in products %}
-                    <div class="col-lg-4 col-md-6">
-                        <div class="member">
-                            <div class="pic"><img src="{{ product.image }}" alt="{{ product.name }}" height=260px></div>
-                            <h4>{{ product.name }}</h4>
-                        </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="member">
+                        <div class="pic"><img src="{{ product.image }}" alt="{{ product.name }}"></div>
+                        <h4>{{ product.name }}</h4>
                     </div>
                 {% endfor %}
             </div>

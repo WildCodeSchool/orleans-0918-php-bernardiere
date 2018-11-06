@@ -5,3 +5,8 @@
     background-size: cover;
     position: relative;
 }
+
+.pic img{
+    height: 280px;
+
+}
