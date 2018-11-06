@@ -14,10 +14,10 @@
         "nikic/fast-route": "^1.2",
         "twig/twig": "^2.4",
         "swiftmailer/swiftmailer": "^6.0",
-        "twig/extensions": "^1.5"
+        "twig/extensions": "^1.5",
+        "squizlabs/php_codesniffer": "^3.3"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {

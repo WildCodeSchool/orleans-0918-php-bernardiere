@@ -1,0 +1,14 @@
+.btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+}
+
+.btn:hover {
+    background-color: #a5ce45;
+    color: white;
+}
+
+#formulaireback {
+    background: #f7f7f7;
+}

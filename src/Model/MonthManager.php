@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class MonthManager extends AbstractManager
 {
     const TABLE = 'month';

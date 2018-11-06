@@ -2,13 +2,10 @@
     padding: 4em 0;
 }
 
-
-
 .title {
-    color: #000000;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
+    color: #a5ce45;
+    font-family: "Lobster", cursive;
+    font-size: 40px;
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
@@ -54,7 +51,6 @@ p {
     font-size: 16px;
 }
 
-
 .button {
     background-color: #ddd;
     border: none;
@@ -70,7 +66,7 @@ p {
 }
 
 .button:hover {
-    background-color: #3e8e41;
+    background-color: #a5ce45;
     color: white;
 }
 
