@@ -16,8 +16,8 @@
             <tr>
                 <th scope="col">Nom du produit</th>
                 {% for month in 1..12 %}
-                    <th class="{{ "now"|date('m') == month ? 'now' }}" >
-                        {{ month|date('1970-'~month~'-01')|localizeddate('none', 'none', locale, null, 'MMM')}}
+                    <th class="{{ "now"|date('m') == month ? 'now' }}">
+                        {{ month|date('1970-'~month~'-01')|localizeddate('none', 'none', locale, null, 'MMM') }}
                     </th>
                 {% endfor %}
             </tr>
@@ -29,7 +29,7 @@
                     {% for month in 1..12 %}
                         <td class="
                             {{ month >= product.product_begin and month <= product.product_end ? 'filled' }}
-                        " ></td>
+                        "></td>
                     {% endfor %}
                 </tr>
             {% endfor %}

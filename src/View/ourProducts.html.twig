@@ -19,8 +19,11 @@
                                 <img class="card-img-top" src="{{ product.image }}" alt="Card product">
                                 <div class="card-body">
                                     <h4 class="card-title mt-2 mb-4">{{ product.name }}</h4>
-                                    <p class="card-text">Période de Cueillette :</br> de {{ product.month_begin }} à {{ product.month_end }}</p>
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#product-{{ product.id }}">Plus d'info...</button>
+                                    <p class="card-text">Période de Cueillette :</br> de {{ product.month_begin }}
+                                        à {{ product.month_end }}</p>
+                                    <button type="button" class="btn" data-toggle="modal"
+                                            data-target="#product-{{ product.id }}">Plus d'info...
+                                    </button>
                                 </div>
                             </div>
                         </div>

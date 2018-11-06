@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
 {% block content %}
     {% include 'contact_description.html.twig' %}
     {% include 'contact_form.html.twig' %}

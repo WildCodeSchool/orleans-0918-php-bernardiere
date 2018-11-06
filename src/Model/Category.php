@@ -8,7 +8,6 @@
 
 namespace Model;
 
-
 class Category
 {
     private $categoryId;
@@ -46,5 +45,4 @@ class Category
     {
         $this->title = $title;
     }
-
 }

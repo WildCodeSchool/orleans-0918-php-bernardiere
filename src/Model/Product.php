@@ -19,7 +19,6 @@ class Product
     private $category_id;
 
 
-
     /**
      * @return int
      */
@@ -39,6 +38,7 @@ class Product
 
         return $this;
     }
+
     /**
      * @return mixed
      */
@@ -134,6 +134,4 @@ class Product
     {
         $this->category_id = $category_id;
     }
-
-
 }

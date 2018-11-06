@@ -1,4 +1,3 @@
-
 {% block content %}
 
 
@@ -63,7 +62,7 @@
                         <label for="zipcode" class="col-xl-1 col-form-label">Code postal:</label>
                         <div class="col-xl-11">
                             <input type="text" class="form-control" id="zipcode" name="zipcode"
-                                   placeholder="Code postale" value="{{ data.zipcode ?? '' }}">
+                                   placeholder="Code postal" value="{{ data.zipcode ?? '' }}">
                             {% if errors.zipcodeError %}
                                 <div class="alert text-danger" role="alert">
                                     {{ errors.zipcodeError }}
