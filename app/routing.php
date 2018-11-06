@@ -17,15 +17,15 @@ $routes = [
         ['adminIndex', '/admin', 'GET'], // action, url, method
         ['add', '/admin/add', ['GET', 'POST']], // action, url, method
         ['list', '/admin/list', 'GET'], //action, url, method
-        ['delete', '/admin/list','POST'], //action, url, method
+        ['delete', '/admin/list', 'POST'], //action, url, method
     ],
     'Product' => [
-        ['show', '/ourproducts','GET'], // action, url, method
+        ['show', '/ourproducts', 'GET'], // action, url, method
     ],
     'Concept' => [ // Controller
         ['showConcept', '/concept', 'GET'], // action, url, method
     ],
-  
+
     'Calendar' => [ // Controller
         ['show', '/calendar', 'GET'], // action, url, method
     ],

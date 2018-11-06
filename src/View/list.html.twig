@@ -4,10 +4,10 @@
 {% block content %}
     <div class="container">
         <a class="btn btn-dark btn-block offset-3 col-6 mt-5" href="/admin/add" role="button">Ajouter un produit</a>
-     {% for category, products in categoriesWithProducts %}
-         <h1 class="mt-4 mb-4">{{ category}}</h1>
-        <table class="table">
-            <thead class="thead-dark">
+        {% for category, products in categoriesWithProducts %}
+            <h1 class="mt-4 mb-4">{{ category }}</h1>
+            <table class="table">
+                <thead class="thead-dark">
                 <tr>
                     <th scope="col">Nom du produit</th>
                     <th scope="col">Image produit</th>
@@ -15,41 +15,46 @@
                     <th scope="col"> Fin de récolte</th>
                     <th scope="col">Supprimer un produit</th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 {% for product in products %}
-                            <tr>
-                            <td>{{ product.name }}</td>
-                            <td><img src="{{ product.image }}" alt="Image Produit"></td>
-                            <td>{{ product.month_begin }}</td>
-                            <td>{{ product.month_end }}</td>
-                            <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#t-{{ product.id }}">
-                                        Supprimer un produit</button>
-                                <div class="modal fade" id="t-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression de ce produit?</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h3>{{ product.name }}</h3>
-                                                <form method="post" id="id" action="">
-                                                    <input type="text" value="{{ product.id }}" title="id" name="id" hidden >
-                                                    <input type="submit" value="Valider">
-                                                </form>
-                                            </div>
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td><img src="{{ product.image }}" alt="Image Produit"></td>
+                        <td>{{ product.month_begin }}</td>
+                        <td>{{ product.month_end }}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-toggle="modal"
+                                    data-target="#t-{{ product.id }}">
+                                Supprimer un produit
+                            </button>
+                            <div class="modal fade" id="t-{{ product.id }}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Confirmer la suppression de
+                                                ce produit?</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h3>{{ product.name }}</h3>
+                                            <form method="post" id="id" action="">
+                                                <input type="text" value="{{ product.id }}" title="id" name="id" hidden>
+                                                <input type="submit" value="Valider">
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </td>
+                    </tr>
                 {% endfor %}
-            </tbody>
-        </table>
-    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
     </div>
 {% endblock %}
 

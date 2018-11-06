@@ -1,12 +1,12 @@
-
 {% block content %}
 
 
 
-    <form action="contact" method="post" target="">
 
 
-    <div class="container mt-5 mb-5">
+<section id="formulaireback">
+    <div class="container pt-5 pb-5 backcontainer">
+        <form action="contact" method="post" target="">
         <div class="row">
             <div class="col-xl-12">
                 <form>
@@ -63,7 +63,7 @@
                         <label for="zipcode" class="col-xl-1 col-form-label">Code postal:</label>
                         <div class="col-xl-11">
                             <input type="text" class="form-control" id="zipcode" name="zipcode"
-                                   placeholder="Code postale" value="{{ data.zipcode ?? '' }}">
+                                   placeholder="Code postal" value="{{ data.zipcode ?? '' }}">
                             {% if errors.zipcodeError %}
                                 <div class="alert text-danger" role="alert">
                                     {{ errors.zipcodeError }}
@@ -100,6 +100,7 @@
             </div>
         </div>
     </div>
+</section>
 
 
     <!-- Optional JavaScript -->
