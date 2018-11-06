@@ -13,6 +13,7 @@ class ContactController extends AbstractController
     public function formcheck()
     {
         $errors = [];
+        $cleanPost =[];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
