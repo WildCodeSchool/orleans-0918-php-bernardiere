@@ -66,8 +66,8 @@ table a:hover {
     color: #A5CE45;
 }
 
-h2 {
+.title {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 1em;
     color: #a5ce45;
 }
